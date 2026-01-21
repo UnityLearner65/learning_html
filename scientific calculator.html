@@ -304,20 +304,25 @@
                 calculatorDisplay.value = eval(((equation).replaceAll("^", "**").replaceAll("×", "*").replaceAll("÷", "/")));
                 appendedList.textContent = equation + " = " + calculatorDisplay.value;
                 appendedList.outerHTML += "<br>";
-                if (calculatorDisplay.value === "NaN" || calculatorDisplay.value === "undefined"){
-                    list.children[list.children.length-1].remove()
-                }
                 parenthesisAmnt = 0;
                 answer = calculatorDisplay.value;
                 answered = true;
                 charsAdded = [];
+                if (list.children[list.children.length-2].textContent === "" || list.children[list.children.length-2].textContent.includes("undefined") || list.children[list.children.length-2].textContent.includes("NaN")){
+                    console.log("has \"\"")
+                    list.children[list.children.length-2].remove();
+                    list.children[list.children.length-1].remove();
+                }
             }
             catch(error){
                 calculatorDisplay.value = "Error";
                 parenthesisAmnt = 0;
                 answered = true;
                 charsAdded = [];
-                list.children[list.children.length-1].remove()
+                if (list.children[list.children.length-1].textContent === "" || list.children[list.children.length-2].textContent.includes("undefined") || list.children[list.children.length-2].textContent.includes("NaN")){
+                    list.children[list.children.length-2].remove();
+                    list.children[list.children.length-1].remove();
+                }
             }
         }
         

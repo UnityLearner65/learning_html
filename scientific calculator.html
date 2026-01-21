@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://media.teaching.com.au/uploads/casfx82au/zoom/casfx82au_casio-fx-82au-plus-ii-2nd-edition-scientific-calculator_v1_1.webp" type="image/x-icon">
+    <title>Scientific Calculator</title>
+</head>
+<body>
+    <!-- HTML -->
+    <noscript>Sorry, your browser can't support javascript.<br>Please enable it in (Settings -> <br>Privacy and security -> <br>Site settings -> <br>JavaScript) and enable it</noscript>
+    <div id="calculator">
+        <label for="radDeg" class="radDeg">Radians:</label>
+        <input type="checkbox" name="radDeg" id="radDeg">
+        <label for="hyperbolic" class="hyperbolic">Hyp:</label>
+        <input type="checkbox" name="hyperbolic" id="hyperbolic">
+        <input type="text" name="calculatorDisplay" id="calculatorDisplay" spellcheck="false" readonly><br>
+        <div id="buttons">
+            <button class="operatorButton">+</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>&lpar;</button>
+            <button>&rpar;</button>
+            <button>sqrt&lpar;</button>
+            <button>cbrt&lpar;</button>
+            <button>fact&lpar;</button>
+            <button>round&lpar;</button>
+            <button class="operatorButton">-</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>sin&lpar;</button>
+            <button>csc&lpar;</button>
+            <button>asin&lpar;</button>
+            <button>acsc&lpar;</button>
+            <button>^2</button>
+            <button>floor&lpar;</button>
+            <button class="operatorButton">×</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>cos&lpar;</button>
+            <button>sec&lpar;</button>
+            <button>acos&lpar;</button>
+            <button>asec&lpar;</button>
+            <button>^3</button>
+            <button>ceil&lpar;</button>
+            <button class="operatorButton">÷</button>
+            <button>.</button>
+            <button>0</button>
+            <button>^</button>
+            <button>tan&lpar;</button>
+            <button>cot&lpar;</button>
+            <button>atan&lpar;</button>
+            <button>acot&lpar;</button>
+            <button>rand&lpar;&rpar;</button>
+            <button>abs&lpar;</button>
+            <button class="operatorButton">=</button>
+            <button>π</button>
+            <button>e</button>
+            <button>1/</button>
+            <button>ln&lpar;</button>
+            <button>log10&lpar;</button>
+            <button>e^</button>
+            <button>10^</button>
+            <button>ans&lpar;&rpar;</button>
+            <button class="clearButton">C</button>
+        </div>
+    </div>
+    <div id="history">
+        <button id="clearHistory">Clear history</button>
+        <ul id="list">
+        </ul>
+    </div>
+    <!-- CSS -->
+    <style>
+        :root{
+            --text-glow: 10px;
+            --checkbox-accent-color: dodgerblue;
+            --button-glow: 20px;
+            --checkbox-glow: 10px;
+            --button-size: 150px;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            min-height: 100vh;
+            background-color: rgb(30, 30, 30);
+        }
+        noscript{
+            color: white;
+            font-size: 2em;
+        }
+        button, input[type="checkbox"]{
+            cursor: pointer;
+            user-select: none;
+        }
+        #calculator{ 
+            background-color: rgb(50, 50, 50);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 20px black;
+        }
+        #history{
+            background-color: rgb(50, 50, 50);
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px black;
+            margin-left: 10px;
+            width: 400px;
+            height: 966.667px;
+            overflow-y: auto;
+            position: relative;
+        }
+        #clearHistory{
+            box-shadow: 0px 0px 10px black;
+            background-image: linear-gradient(180deg, red 30%, maroon);
+            border-radius: 10px;
+            border: none;
+            width: 150px;
+            height: 50px;
+            font-size: 1.2em;
+            color: white;
+            position: sticky;
+            top: 5px; left: 0px;
+            margin: 5px;
+        }
+        #clearHistory:hover{
+            background-image: linear-gradient(180deg, rgb(180, 0, 0) 30%, rgb(100, 0, 0));
+        }
+        #clearHistory:active{
+            background-image: linear-gradient(180deg, rgb(140, 0, 0) 30%, rgb(70, 0, 0));
+        }
+        #history li{
+            color: white;
+            font-size: 2em;
+            font-family: Arial, Helvetica, sans-serif;
+            text-shadow: 0px 0px var(--text-glow) white;
+        }
+        #calculatorDisplay{
+            outline: none;
+        }
+        #buttons{
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+        }
+        #buttons button{
+            padding: 0px;
+            margin: 3px;
+            width: var(--button-size);
+            height: var(--button-size);
+            font-size: calc((var(--button-size)/3.125px)*1px);
+            border-radius: 100%;
+            color: white;
+            border-style: none;
+        }
+        #buttons button:not(.operatorButton, .clearButton){
+            background-color: rgb(80, 80, 80);
+            text-shadow: 0px 0px var(--text-glow) grey;
+            box-shadow: 0px 0px var(--button-glow) rgb(61, 61, 61);
+        }
+        #buttons button:not(.operatorButton, .clearButton):hover{
+            background-color: rgb(120, 120, 120);
+        }
+        #buttons button:not(.operatorButton, .clearButton):active{
+            background-color: rgb(160, 160, 160);
+        }
+        .operatorButton{
+            background-color: rgb(255, 149, 0);
+            text-shadow: 0px 0px var(--text-glow) rgb(255, 192, 104);
+            box-shadow: 0px 0px var(--button-glow) rgb(127, 74, 0);
+        }
+        .operatorButton:hover{
+            background-color: rgb(255, 174, 60);
+        }
+        .operatorButton:active{
+            background-color: rgb(255, 199, 120);
+        }
+        .clearButton{
+            background-color: firebrick;
+            text-shadow: 0px 0px var(--text-glow) rgb(191, 105, 105);
+            box-shadow: 0px 0px var(--button-glow) rgb(99, 19, 19);
+        }
+        .clearButton:hover{
+            background-color: rgb(177, 90, 90);
+        }
+        .clearButton:active{
+            background-color: rgb(174, 120, 120);
+        }
+        #calculator #calculatorDisplay{
+            width: 100%;
+            height: 150px;
+            background-color: rgb(75, 75, 75);
+            border: none;
+            font-size: 5.5em;
+            color: white;
+            text-shadow: 0px 0px var(--text-glow) white;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        #calculator label{
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            text-shadow: 0px 0px var(--text-glow) white;
+            font-weight: bold;
+            font-size: large;
+            font-size: 2em;
+        }
+        #calculator input[type="checkbox"]{
+            width: 1.5em;
+            height: 1.5em;
+        }
+        #calculator input[type="checkbox"]:checked{
+            accent-color: var(--checkbox-accent-color);
+            box-shadow: 0px 0px var(--checkbox-glow) var(--checkbox-accent-color);
+        }
+        #calculator .radDeg, #radDeg{
+            position: relative;
+            left: 10px;
+        }
+        #calculator .hyperbolic, #hyperbolic{
+            position: relative;
+            left: 20px;
+        }
+        #calculator .glowToggle, #glowToggle{
+            position: relative;
+            left: 30px;
+        }
+    </style>
+    <!-- JAVASCRIPT -->
+    <script>
+        const π = Math.PI;
+        const e = Math.E;
+        const Φ = (1+Math.sqrt(5))/2;
+        const calculatorDisplay = document.getElementById("calculatorDisplay");
+        const radDeg = document.getElementById("radDeg");
+        const hyperbolic = document.getElementById("hyperbolic");
+        const buttons = document.getElementById("buttons").querySelectorAll("button");
+        const list = document.getElementById("list");
+        const clearHistory = document.getElementById("clearHistory");
+        let degrees = true;
+        let hyp = false
+        let answered = false;
+        let answer = 0;
+        let charsAdded = [];
+        let parenthesisAmnt = 0;
+        
+        function appendToDisplay(value){calculatorDisplay.value = value.join("");}
+        function backspace(){
+            const index = charsAdded.lastIndexOf(charsAdded[charsAdded.length-1]);
+            if (charsAdded.length > 0 && (charsAdded[index].includes("(") && !charsAdded[index].includes(")"))){
+                parenthesisAmnt--;
+            }
+            else if(charsAdded.length > 0 && (charsAdded[index].includes(")") && !charsAdded[index].includes("("))){
+                parenthesisAmnt++;
+            }
+            charsAdded.splice(index, 1); 
+            calculatorDisplay.value = charsAdded.join("");
+        }
+        function sin(value){return Math.sin(value*((degrees)?(π/180):(1)));}
+        function cos(value){return Math.cos(value*((degrees)?(π/180):(1)));}
+        function tan(value){return Math.tan(value*((degrees)?(π/180):(1)));}
+        function csc(value){return 1/Math.sin(value*((degrees)?(π/180):(1)));}
+        function sec(value){return 1/Math.cos(value*((degrees)?(π/180):(1)));}
+        function cot(value){return 1/Math.tan(value*((degrees)?(π/180):(1)));}
+        function asin(value){return Math.asin(value)*((degrees)?(180/π):(1));}
+        function acos(value){return Math.acos(value)*((degrees)?(180/π):(1));}
+        function atan(value){return Math.atan(value)*((degrees)?(180/π):(1));}
+        function acsc(value){return Math.asin(1/value)*((degrees)?(180/π):(1));}
+        function asec(value){return Math.acos(1/value)*((degrees)?(180/π):(1));}
+        function acot(value){return Math.atan(1/value)*((degrees)?(180/π):(1));}
+        function sinh(value){return ((e**value)-(e**-value))/2;}
+        function cosh(value){return ((e**value)+(e**-value))/2;}
+        function tanh(value){return sinh(value)/cosh(value);}
+        function csch(value){return 1/sinh(value);}
+        function sech(value){return 1/cosh(value);}
+        function coth(value){return csch(value)/sech(value);}
+        function asinh(value){return ln(value+sqrt((value**2)+1));}
+        function acosh(value){return ln(value+sqrt((value**2)-1));}
+        function atanh(value){return (1/2)*ln((1+value)/(1-value));}
+        function acsch(value){return ln((1/value)+sqrt((1/(value**2))+1));}
+        function asech(value){return ln((1/value)+sqrt((1/(value**2))-1));}
+        function acoth(value){return (1/2)*ln((value+1)/(value-1));}
+        function ln(value){return Math.log(value);}
+        function log10(value){return Math.log10(value);}
+        function sqrt(value){return Math.sqrt(value);}
+        function cbrt(value){return Math.cbrt(value);}
+        function fact(value){let num = 1; for (let i = 0; i < value; i++){
+            num *= (i+1);
+        } return num;}
+        function rand(){return Math.random();}
+        function round(value){return Math.round(value);}
+        function floor(value){return Math.floor(value);}
+        function ceil(value){return Math.ceil(value);}
+        function abs(value){return Math.abs(value);}
+        function ans(){return Number(answer);}
+        function correctDisplay(){
+            try{
+                const appendedList = list.appendChild(document.createElement("li"));
+                const equation = ((calculatorDisplay.value) + (")").repeat(parenthesisAmnt));
+                calculatorDisplay.value = eval(((equation).replaceAll("^", "**").replaceAll("×", "*").replaceAll("÷", "/")));
+                appendedList.textContent = equation + " = " + calculatorDisplay.value;
+                appendedList.outerHTML += "<br>";
+                if (calculatorDisplay.value === "NaN" || calculatorDisplay.value === "undefined"){
+                    list.children[list.children.length-1].remove()
+                }
+                parenthesisAmnt = 0;
+                answer = calculatorDisplay.value;
+                answered = true;
+                charsAdded = [];
+            }
+            catch(error){
+                calculatorDisplay.value = "Error";
+                parenthesisAmnt = 0;
+                answered = true;
+                charsAdded = [];
+                list.children[list.children.length-1].remove()
+            }
+        }
+        
+        calculatorDisplay.onkeypress = function(event){
+            if (event.key === "Enter"){
+                correctDisplay();
+            }
+        }
+        buttons.forEach(function(element){
+            element.onclick = function(){
+                const textCont = element.textContent;
+                if (textCont === "C"){
+                    backspace();
+                }
+                else if (textCont === "="){
+                    correctDisplay();
+                }
+                else if (textCont === "ans"){
+                    if (answered){
+                        calculatorDisplay.value = "";
+                        answered = false;
+                    }
+                    charsAdded.push(answer);
+                    appendToDisplay(charsAdded);
+                }
+                else{
+                    if (answered){
+                        calculatorDisplay.value = "";
+                        answered = false;
+                        parenthesisAmnt = 0;
+                    }
+                    charsAdded.push(textCont);
+                    appendToDisplay(charsAdded);
+                    if (textCont.includes("(") && !textCont.includes(")")){
+                        parenthesisAmnt++;
+                    }
+                    else if (textCont.includes(")") && !textCont.includes("(")){
+                        parenthesisAmnt--;
+                    }
+                }
+            }
+        });
+        radDeg.onchange = function(){degrees = !degrees;}
+        hyperbolic.onchange = function(){
+            hyp = !hyp;
+            if (hyp){
+                for (let i = 0; i < buttons.length; i++) {
+                    if (buttons[i].textContent === "sin("){
+                        buttons[i].textContent = "sinh("
+                    }
+                    else if (buttons[i].textContent === "cos("){
+                        buttons[i].textContent = "cosh("
+                    }
+                    else if (buttons[i].textContent === "tan("){
+                        buttons[i].textContent = "tanh("
+                    }
+                    else if (buttons[i].textContent === "csc("){
+                        buttons[i].textContent = "csch("
+                    }
+                    else if (buttons[i].textContent === "sec("){
+                        buttons[i].textContent = "sech("
+                    }
+                    else if (buttons[i].textContent === "cot("){
+                        buttons[i].textContent = "coth("
+                    }
+                    else if (buttons[i].textContent === "asin("){
+                        buttons[i].textContent = "asinh("
+                    }
+                    else if (buttons[i].textContent === "acos("){
+                        buttons[i].textContent = "acosh("
+                    }
+                    else if (buttons[i].textContent === "atan("){
+                        buttons[i].textContent = "atanh("
+                    }
+                    else if (buttons[i].textContent === "acsc("){
+                        buttons[i].textContent = "acsch("
+                    }
+                    else if (buttons[i].textContent === "asec("){
+                        buttons[i].textContent = "asech("
+                    }
+                    else if (buttons[i].textContent === "acot("){
+                        buttons[i].textContent = "acoth("
+                    }
+                }
+            }
+            else{
+                for (let i = 0; i < buttons.length; i++) {
+                    if (buttons[i].textContent === "sinh("){
+                        buttons[i].textContent = "sin("
+                    }
+                    else if (buttons[i].textContent === "cosh("){
+                        buttons[i].textContent = "cos("
+                    }
+                    else if (buttons[i].textContent === "tanh("){
+                        buttons[i].textContent = "tan("
+                    }
+                    else if (buttons[i].textContent === "csch("){
+                        buttons[i].textContent = "csc("
+                    }
+                    else if (buttons[i].textContent === "sech("){
+                        buttons[i].textContent = "sec("
+                    }
+                    else if (buttons[i].textContent === "coth("){
+                        buttons[i].textContent = "cot("
+                    }
+                    else if (buttons[i].textContent === "asinh("){
+                        buttons[i].textContent = "asin("
+                    }
+                    else if (buttons[i].textContent === "acosh("){
+                        buttons[i].textContent = "acos("
+                    }
+                    else if (buttons[i].textContent === "atanh("){
+                        buttons[i].textContent = "atan("
+                    }
+                    else if (buttons[i].textContent === "acsch("){
+                        buttons[i].textContent = "acsc("
+                    }
+                    else if (buttons[i].textContent === "asech("){
+                        buttons[i].textContent = "asec("
+                    }
+                    else if (buttons[i].textContent === "acoth("){
+                        buttons[i].textContent = "acot("
+                    }
+                }
+            }
+        }
+        clearHistory.onclick = function(){
+            list.innerHTML = "";
+        }
+    </script>
+</body>
+</html>

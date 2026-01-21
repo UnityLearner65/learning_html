@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://media.istockphoto.com/id/538665020/photo/internet-meme-why-you-no-rage-face-3d-illustration.jpg?s=612x612&w=0&k=20&c=5D_g8Jy8kqg5Op2bb4RvcH8_6y0HGPqt29TKDrEqLyM=" type="image/x-icon">
+    <title>Learning HTML myself</title>
+</head>
+<body>
+    <!-- HTML -->
+    <button onclick="changeText('text', 'hello')">hello</button>
+    <p id="text"></p>
+    <p id="biusText" style="font-family: Arial, Helvetica, sans-serif; font-size: 2em;">The quick brown fox jumps over the lazy dog</p>
+    <p id="debugger"></p>
+    <button id="boldButton" style="font-size: medium;"><b>B</b></button>
+    <button id="italicButton" style="font-size: medium;"><i>I</i></button>
+    <button id="underlineButton" style="font-size: medium;"><u>U</u></button>
+    <button id="strikethroughButton" style="font-size: medium;"><s>S</s></button>
+    <br><br>
+    <div class="converters" style="width: 800px; height: 400px; background-color: black; display: grid; grid-template-columns: repeat(2, 1fr);">
+        <div class="time" style="padding: 10px; border: solid 1px white;">
+            <h1>Time</h1>
+            <input type="number" name="time" id="time" placeholder="Seconds">
+            <select name="Time1" id="timeSelection1">
+                <option value="Planck Time">Planck Time</option>
+                <option value="Yoctoseconds">Yoctoseconds</option>
+                <option value="Zeptoseconds">Zeptoseconds</option>
+                <option value="Attoseconds">Attoseconds</option>
+                <option value="Femtoseconds">Femtoseconds</option>
+                <option value="Picoseconds">Picoseconds</option>
+                <option value="Nanoseconds">Nanoseconds</option>
+                <option value="Microseconds">Microseconds</option>
+                <option value="Milliseconds">Milliseconds</option>
+                <option value="Seconds" selected>Seconds</option>
+                <option value="Minutes">Minutes</option>
+                <option value="Hours">Hours</option>
+                <option value="Days">Days</option>
+                <option value="Months">Months</option>
+                <option value="Years">Years</option>
+                <option value="Decades">Decades</option>
+                <option value="Centuries">Centuries</option>
+                <option value="Millenniums">Millenniums</option>
+            </select><br>
+            <button id="timeTotime">Convert Seconds to Seconds</button>
+            <select name="Time2" id="timeSelection2">
+                <option value="Planck Time">Planck Time</option>
+                <option value="Yoctoseconds">Yoctoseconds</option>
+                <option value="Zeptoseconds">Zeptoseconds</option>
+                <option value="Attoseconds">Attoseconds</option>
+                <option value="Femtoseconds">Femtoseconds</option>
+                <option value="Picoseconds">Picoseconds</option>
+                <option value="Nanoseconds">Nanoseconds</option>
+                <option value="Microseconds">Microseconds</option>
+                <option value="Milliseconds">Milliseconds</option>
+                <option value="Seconds" selected>Seconds</option>
+                <option value="Minutes">Minutes</option>
+                <option value="Hours">Hours</option>
+                <option value="Days">Days</option>
+                <option value="Months">Months</option>
+                <option value="Years">Years</option>
+                <option value="Decades">Decades</option>
+                <option value="Centuries">Centuries</option>
+                <option value="Millenniums">Millenniums</option>
+            </select><br>
+            <p id="timeText" style="font-size: large; color: white; font-weight: bold;"></p>
+        </div>
+        <div class="mass" style="padding: 10px; border: solid 1px white;">
+            <h1>Mass</h1>
+            <input type="number" name="mass" id="mass" placeholder="Grams">
+            <select name="Mass1" id="massSelection1">
+                <option value="Yoctograms">Yoctograms</option>
+                <option value="Zeptograms">Zeptograms</option>
+                <option value="Attograms">Attograms</option>
+                <option value="Femtograms">Femtograms</option>
+                <option value="Picograms">Picograms</option>
+                <option value="Nanograms">Nanograms</option>
+                <option value="Micrograms">Micrograms</option>
+                <option value="Milligrams">Milligrams</option>
+                <option value="Centigrams">Centigrams</option>
+                <option value="Decigrams">Decigrams</option>
+                <option value="Grams" selected>Grams</option>
+                <option value="Decagrams">Decagrams</option>
+                <option value="Hectograms">Hectograms</option>
+                <option value="Kilograms">Kilograms</option>
+                <option value="Tons">Tons</option>
+                <option value="Kilotons">Kilotons</option>
+                <option value="Megatons">Megatons</option>
+                <option value="Gigatons">Gigatons</option>
+                <option value="Teratons">Teratons</option>
+                <option value="Petatons">Petatons</option>
+                <option value="Exatons">Exatons</option>
+                <option value="Yottatons">Yottatons</option>
+            </select><br>
+            <button id="massToMass">Convert Grams to Grams</button>
+            <select name="Mass2" id="massSelection2">
+                <option value="Yoctograms">Yoctograms</option>
+                <option value="Zeptograms">Zeptograms</option>
+                <option value="Attograms">Attograms</option>
+                <option value="Femtograms">Femtograms</option>
+                <option value="Picograms">Picograms</option>
+                <option value="Nanograms">Nanograms</option>
+                <option value="Micrograms">Micrograms</option>
+                <option value="Milligrams">Milligrams</option>
+                <option value="Centigrams">Centigrams</option>
+                <option value="Decigrams">Decigrams</option>
+                <option value="Grams" selected>Grams</option>
+                <option value="Decagrams">Decagrams</option>
+                <option value="Hectograms">Hectograms</option>
+                <option value="Kilograms">Kilograms</option>
+                <option value="Tons">Tons</option>
+                <option value="Kilotons">Kilotons</option>
+                <option value="Megatons">Megatons</option>
+                <option value="Gigatons">Gigatons</option>
+                <option value="Teratons">Teratons</option>
+                <option value="Petatons">Petatons</option>
+                <option value="Exatons">Exatons</option>
+                <option value="Yottatons">Yottatons</option>
+            </select><br>
+            <p id="massText" style="font-size: large; color: white; font-weight: bold;"></p>
+        </div>
+        <div class="length" style="padding: 10px; border: solid 1px white;">
+            <h1>Length</h1>
+            <input type="number" name="days" id="time" placeholder="Seconds">
+            <select name="Time1" id="timeSelection1">
+                <option value="Planck Time">Planck Time</option>
+                <option value="Yoctoseconds">Yoctoseconds</option>
+                <option value="Zeptoseconds">Zeptoseconds</option>
+                <option value="Attoseconds">Attoseconds</option>
+                <option value="Femtoseconds">Femtoseconds</option>
+                <option value="Picoseconds">Picoseconds</option>
+                <option value="Nanoseconds">Nanoseconds</option>
+                <option value="Microseconds">Microseconds</option>
+                <option value="Milliseconds">Milliseconds</option>
+                <option value="Seconds" selected>Seconds</option>
+                <option value="Minutes">Minutes</option>
+                <option value="Hours">Hours</option>
+                <option value="Days">Days</option>
+                <option value="Months">Months</option>
+                <option value="Years">Years</option>
+                <option value="Decades">Decades</option>
+                <option value="Centuries">Centuries</option>
+                <option value="Millenniums">Millenniums</option>
+            </select><br>
+            <button id="timeTotime">Convert Seconds to Seconds</button>
+            <select name="Time2" id="timeSelection2">
+                <option value="Planck Time">Planck Time</option>
+                <option value="Yoctoseconds">Yoctoseconds</option>
+                <option value="Zeptoseconds">Zeptoseconds</option>
+                <option value="Attoseconds">Attoseconds</option>
+                <option value="Femtoseconds">Femtoseconds</option>
+                <option value="Picoseconds">Picoseconds</option>
+                <option value="Nanoseconds">Nanoseconds</option>
+                <option value="Microseconds">Microseconds</option>
+                <option value="Milliseconds">Milliseconds</option>
+                <option value="Seconds" selected>Seconds</option>
+                <option value="Minutes">Minutes</option>
+                <option value="Hours">Hours</option>
+                <option value="Days">Days</option>
+                <option value="Months">Months</option>
+                <option value="Years">Years</option>
+                <option value="Decades">Decades</option>
+                <option value="Centuries">Centuries</option>
+                <option value="Millenniums">Millenniums</option>
+            </select><br>
+            <p id="timeText" style="font-size: large; color: white; font-weight: bold;"></p>
+        </div>
+        <div class="temperature" style="padding: 10px; border: solid 1px white;">
+            <h1>Temperature</h1>
+            <input type="number" name="days" id="time" placeholder="Seconds">
+            <select name="Time1" id="timeSelection1">
+                <option value="Planck Time">Planck Time</option>
+                <option value="Yoctoseconds">Yoctoseconds</option>
+                <option value="Zeptoseconds">Zeptoseconds</option>
+                <option value="Attoseconds">Attoseconds</option>
+                <option value="Femtoseconds">Femtoseconds</option>
+                <option value="Picoseconds">Picoseconds</option>
+                <option value="Nanoseconds">Nanoseconds</option>
+                <option value="Microseconds">Microseconds</option>
+                <option value="Milliseconds">Milliseconds</option>
+                <option value="Seconds" selected>Seconds</option>
+                <option value="Minutes">Minutes</option>
+                <option value="Hours">Hours</option>
+                <option value="Days">Days</option>
+                <option value="Months">Months</option>
+                <option value="Years">Years</option>
+                <option value="Decades">Decades</option>
+                <option value="Centuries">Centuries</option>
+                <option value="Millenniums">Millenniums</option>
+            </select><br>
+            <button id="timeTotime">Convert Seconds to Seconds</button>
+            <select name="Time2" id="timeSelection2">
+                <option value="Planck Time">Planck Time</option>
+                <option value="Yoctoseconds">Yoctoseconds</option>
+                <option value="Zeptoseconds">Zeptoseconds</option>
+                <option value="Attoseconds">Attoseconds</option>
+                <option value="Femtoseconds">Femtoseconds</option>
+                <option value="Picoseconds">Picoseconds</option>
+                <option value="Nanoseconds">Nanoseconds</option>
+                <option value="Microseconds">Microseconds</option>
+                <option value="Milliseconds">Milliseconds</option>
+                <option value="Seconds" selected>Seconds</option>
+                <option value="Minutes">Minutes</option>
+                <option value="Hours">Hours</option>
+                <option value="Days">Days</option>
+                <option value="Months">Months</option>
+                <option value="Years">Years</option>
+                <option value="Decades">Decades</option>
+                <option value="Centuries">Centuries</option>
+                <option value="Millenniums">Millenniums</option>
+            </select><br>
+            <p id="timeText" style="font-size: large; color: white; font-weight: bold;"></p>
+        </div>
+    </div><br>
+    <div id="box">Move with WASD</div><br>
+    <label for="imageFile">Import Image:</label>
+    <input type="file" name="imageFile" id="image" accept="image/*"><br>
+    <img id="imgOut" alt="Image preview" width="800px" hidden/><br>
+    <label for="audioFile">Import Audio:</label>
+    <input type="file" name="audioFile" id="audio" accept="audio/*"><br>
+    <audio id="audOut" controls hidden></audio><br>
+    <label for="videoFile">Import Video:</label>
+    <input type="file" name="videoFile" id="video" accept="video/*"><br>
+    <video id="vidOut" width="800px" controls hidden></video><br>
+    <svg class="canvas" width="960px" height="1080px">
+        <defs class="gradients">
+            <lineargradient id="rainbowGradient"> 
+                <stop offset="0%" stop-color="hsl(0, 100%, 50%)"></stop>
+                <stop offset="10%" stop-color="hsl(36, 100%, 50%)"></stop>
+                <stop offset="20%" stop-color="hsl(72, 100%, 50%)"></stop>
+                <stop offset="30%" stop-color="hsl(108, 100%, 50%)"></stop>
+                <stop offset="40%" stop-color="hsl(144, 100%, 50%)"></stop>
+                <stop offset="50%" stop-color="hsl(180, 100%, 50%)"></stop>
+                <stop offset="60%" stop-color="hsl(216, 100%, 50%)"></stop>
+                <stop offset="70%" stop-color="hsl(252, 100%, 50%)"></stop>
+                <stop offset="80%" stop-color="hsl(288, 100%, 50%)"></stop>
+                <stop offset="90%" stop-color="hsl(324, 100%, 50%)"></stop>
+                <stop offset="100%" stop-color="hsl(360, 100%, 50%)"></stop>
+            </lineargradient>
+            <radialgradient id="radialGradient">
+                <stop offset="0%" stop-color="hsl(0, 100%, 50%)"></stop>
+                <stop offset="16.66666667%" stop-color="hsl(60, 100%, 50%)"></stop>
+                <stop offset="33.33333333%" stop-color="hsl(120, 100%, 50%)"></stop>
+                <stop offset="50%" stop-color="hsl(180, 100%, 50%)"></stop>
+                <stop offset="66.66666667%" stop-color="hsl(240, 100%, 50%)"></stop>
+                <stop offset="83.33333333%" stop-color="hsl(300, 100%, 50%)"></stop>
+                <stop offset="100%" stop-color="hsl(360, 100%, 50%)"></stop>
+            </radialgradient>
+        </defs>
+        <circle cx="100px" cy="100px" r="50" stroke="black" stroke-width="1" fill="url(#radialGradient)"></circle>
+        <rect x="200px" y="50px" width="200px" height="100px" stroke="black" stroke-width="1" fill="url(#rainbowGradient)"></rect>
+        <text x="450" y="120" font-size="50" font-family="Helvetica" stroke="black" stroke-width="1" fill="url(#rainbowGradient)">SVG</text>
+
+        <path d="M 50,750 L 150,550 L 250,750" fill="none" stroke="red" stroke-width="3"></path>
+        <path d="M 100,650 L 200,650" fill="none" stroke="green" stroke-width="3"></path>
+        <path d="M 50,750 q 100,-200 200,0" id="bezierPath" fill="none" stroke="blue" stroke-width="3"></path>
+        <g stroke="black" stroke-width="3" fill="black">
+            <circle id="pointA" cx="50" cy="750" r=4></circle>
+            <circle id="pointB" cx="150" cy="550" r=4></circle>
+            <circle id="pointC" cx="250" cy="750" r=4></circle>
+        </g>
+        <g stroke="black" stroke-width="0" fill="green" font-size="30" font-family="Helvetica">
+            <text x="50" y="750" dx="-30" dy="0">A</text>
+            <text x="150" y="550" dx="-10" dy="-10">B</text>
+            <text x="250" y="750" dx="10" dy="0">C</text>
+        </g>
+        <text>
+            <textpath href="#bezierPath" startOffset="25" fill="white" stroke="black" stroke-width="0.5" font-family="Helvetica" font-size="25">Bézier path based text</textpath>
+        </text>
+        <path d="M 300,650 q 40,-50 80,0 q 40,50 80,0 q -40,-50 -80,0 q -40,50 -80,0 Z" fill="none" stroke="black" stroke-width="4"></path>
+        <circle r="50" fill="rgba(255, 0, 0, 0.5)">
+            <animatemotion 
+                path="M 300,650 q 40,-50 80,0 q 40,50 80,0 q -40,-50 -80,0 q -40,50 -80,0 Z"
+                begin="0s"
+                dur="3s"
+                repeatCount="indefinite"
+            />
+        </circle>
+        <g class="frame" stroke="black" stroke-width="4">
+            <rect x="525" y="500" width="400" height="300" fill="lightblue"></rect>
+            <circle cx="875" cy="550" r="40" fill="yellow"></circle>
+            <path d="M 605,800 q 125,-400 250,0 Z" fill="rgb(94, 156, 94)"></path>
+            <path d="M 525,800 q 125,-450 250,0 Z" fill="lightgreen"></path>
+        </g>
+        <polygon class="triangle" points="700,30 786.60254,180 613.39746,180" stroke="black" stroke-width="1" fill="url(#rainbowGradient)"></polygon>
+        <polygon class="pentagon" points="700,240 795.10565,309.0983 758.77853,420.9017 641.22147,420.9017 604.89435,309.0983" stroke="black" stroke-width="1" fill="url(#rainbowGradient)"></polygon>
+        <polygon class="hexagon" points="350,243.39746 450,243.39746 500,330 450,416.60254 350,416.60254 300,330" stroke="black" stroke-width="1" fill="url(#rainbowGradient)"></polygon>
+    </svg><br><br>
+    <label for="dOB">Date Of Birth:</label>
+    <input type="date" name="dateOfBirth" id="dOB">
+    <input type="submit" value="Submit" id="submitDOB"><br>
+    <p id="showDOB"></p><br>
+    <div style="width: 500px; height: 100px; background-color: black; padding: 5px;">
+        <label for="HTML" style="color: white;">HTML:</label>
+        <progress id="HTML" max="503" value="147" style="accent-color: rgb(255, 115, 0);"></progress><br>
+        <label for="CSS" style="color: white;">CSS:</label>
+        <progress id="CSS" max="503" value="89" style="accent-color: dodgerblue"></progress><br>
+        <label for="JAVASCRIPT" style="color: white;">JAVASCRIPT:</label>
+        <progress id="JAVASCRIPT" max="503" value="178" style="accent-color: rgb(255, 230, 44);"></progress><br>
+    </div><br>
+    <div class="javascriptIcon" style="width: 200px; height: 200px; background-color: rgb(255, 230, 44); display: flex; justify-content: end;">
+        <p style="font-family: Neutra Text TF; font-size: 120px; text-align: end; margin: 0px; align-content: end; padding-right: 20px;">JS</p>
+    </div><br>
+    <div id="divGradient"></div>
+    <p style="font-size: 1.5em;">700nm <span style="float: right;">400nm</span></p>
+    <p style="font-family: Outfit; font-size: 2em;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi placeat beatae odio nulla quos, quia dignissimos iusto similique corrupti rerum aliquam tenetur? Vero voluptatem ipsam neque suscipit saepe facere sapiente.</p>
+    <p style="font-family: VCR OSD Mono; font-size: 2em;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nostrum recusandae eos sed placeat incidunt, reprehenderit ab ex at voluptate nemo fuga aperiam deleniti quae commodi aliquid quia assumenda totam?</p>
+    <div style="max-width: 100%; height: 1000px; background-color: black; padding: 5px; overflow: hidden; position: relative;">
+        <p style="font-family: Terminal; font-size: 2em; color: lime; margin: 0px;">
+            > Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio atque, tempora similique fugiat dolores ratione magni, ullam porro aliquam eos voluptate, perferendis adipisci! Dolorum, ipsa nisi incidunt porro necessitatibus itaque.<br>
+            > The quick brown fox jumps over the lazy dog.
+        </p>
+    </div><br>
+    <p id="isEven" style="font-size: 2em; margin: 0px"></p><br>
+    <ruby>
+        𱁬<rt>たいと</rt>
+    </ruby><br>
+    <span style="font-size: 5em">
+        &Phi;=1.61803398875<br>
+        &tau;=6.28318530718<br>
+        &spadesuit;
+        <span style="color: red">&heartsuit;</span>
+        &clubsuit;
+        <span style="color: red">&diamondsuit;</span>
+    </span><br>
+    <button id="passwordGenerator">Create random password</button>
+    <p id="password" style="font-size: 2em"></p><br>
+    <div id="index.html" style="width: 100%; height: 1000px; display: flex; justify-content: center; visibility: visible;">
+        <div id="htmlThingy" style="background-color: rgb(31, 31, 31); width: 50%; height: 100%; padding: 5px; position: relative; overflow-y: auto; font-size: 16px;">
+            <div style="background-color: black; color: white; font-family: monospace; width: fit-content; height: fit-content; padding: 2px;">
+                <span style="color: darkorange;">&lt;&gt;</span> index.html
+            </div>
+            <span class="monoFontGrey">&lt;!<span class="monoFontBlue">DOCTYPE </span><span class="monoFontCyan">html</span>></span><br>
+            <span class="monoFontGrey">&lt;<span class="monoFontBlue">html <span class="monoFontCyan">lang<span class="monoFont">=<span class="monoFontOrange">"en"</span></span></span></span>></span><br>
+            <span class="monoFontGrey">&lt;<span class="monoFontBlue">head</span>></span><br>
+            <span class="monoFontGrey">&nbsp;&nbsp;&lt;<span class="monoFontBlue">meta </span><span class="monoFontCyan">charset</span><span class="monoFont">=</span><span class="monoFontOrange">"UTF-8"</span><span class="monoFontGrey">></span><br>
+            <span class="monoFontGrey">&nbsp;&nbsp;&lt;<span class="monoFontBlue">meta </span><span class="monoFontCyan">name</span><span class="monoFont">=</span><span class="monoFontOrange">"viewport" </span><span class="monoFontCyan">content</span><span class="monoFont">=</span><span class="monoFontOrange">"width=device-width, initial-scale=1.0"</span><span class="monoFontGrey">></span><br>
+            <span class="monoFontGrey">&nbsp;&nbsp;&lt;<span class="monoFontBlue">title</span>></span><span id="title" class="monoFont">Document</span><span class="monoFontGrey">&lt;/<span class="monoFontBlue">title</span>></span><br>
+            <span class="monoFontGrey">&lt;/<span class="monoFontBlue">head</span>></span><br>
+            <span class="monoFontGrey">&lt;<span class="monoFontBlue">body</span>></span><br>
+            <span id="body">
+                <!-- &nbsp;&nbsp;<span class="monoFontGreen">&lt;!-- HTML --&gt;</span><br> -->
+                <span class="monoFontGrey">&nbsp;&nbsp;&lt;<span class="monoFontBlue">h1</span>></span><span class="monoFont">Heading</span><span class="monoFontGrey">&lt;/<span class="monoFontBlue">h1</span>></span><br>
+                <span class="monoFontGrey">&nbsp;&nbsp;&lt;<span class="monoFontBlue">p</span>></span><span class="monoFont">Hello world!</span><span class="monoFontGrey">&lt;/<span class="monoFontBlue">p</span>></span><br>
+                <span class="monoFontGrey">&nbsp;&nbsp;&lt;<span class="monoFontBlue">button <span class="monoFontCyan">id<span class="monoFont">=<span class="monoFontOrange">"button"</span></span></span></span>></span><span class="monoFont">Hello world!</span><span class="monoFontGrey">&lt;/<span class="monoFontBlue">button</span>>&lt;<span class="monoFontBlue">br</span>>&lt;<span class="monoFontBlue">br</span>></span><br>
+                <span class="monoFontGrey">&nbsp;&nbsp;&lt;<span class="monoFontBlue">div <span class="monoFontCyan">class<span class="monoFont">=<span class="monoFontOrange">"animation"</span></span></span></span>>&lt;/<span class="monoFontBlue">div</span>></span><br>
+                <span class="monoFontGrey">&nbsp;&nbsp;&lt;<span class="monoFontBlue">a <span class="monoFontCyan">href<span class="monoFont">=<span class="monoFontOrange">"https://www.google.com/?zx=1768621219884&no_sw_cr=1"</span></span></span></span>><span class="monoFont">google.com</span>&lt;<span class="monoFontBlue"><span class="monoFontGrey">/</span>a</span>></span><br>
+                <!-- &nbsp;&nbsp;<span class="monoFontGreen">&lt;!-- CSS --&gt;</span><br> -->
+                <span class="monoFontGrey">&nbsp;&nbsp;&lt;<span class="monoFontBlue">style</span>></span><span class="monoFont"><br>
+                    <!-- <span class="monoFontGreen">&nbsp;&nbsp;&nbsp;&nbsp;/* Neutra Text TF */</span><br> -->
+                    <span class="monoFontPink">&nbsp;&nbsp;&nbsp;&nbsp;@import <span class="monoFontYellow">url</span><span class="monoFontGold">&lpar;<span class="monoFontOrange">'<u style="text-decoration-thickness: 1px;">https://fonts.cdnfonts.com/css/neutra-text-tf</u>'</span></span><span class="monoFontGold">&rpar;<span class="monoFont">;</span></span></span><br><br>
+                    <span class="monoFontPink">&nbsp;&nbsp;&nbsp;&nbsp;@keyframes <span class="monoFontCyan">colourChange</span><span class="monoFontGold">&lbrace;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFont">0%<span class="monoFontPink">&lbrace;<span class="monoFontCyan">background-color: <span class="monoFontOrange">red<span class="monoFont">;</span></span></span>&rbrace;</span></span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFont">16.66666667%<span class="monoFontPink">&lbrace;<span class="monoFontCyan">background-color: <span class="monoFontOrange">yellow<span class="monoFont">;</span></span></span>&rbrace;</span></span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFont">33.33333333%<span class="monoFontPink">&lbrace;<span class="monoFontCyan">background-color: <span class="monoFontOrange">lime<span class="monoFont">;</span></span></span>&rbrace;</span></span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFont">50%<span class="monoFontPink">&lbrace;<span class="monoFontCyan">background-color: <span class="monoFontOrange">cyan<span class="monoFont">;</span></span></span>&rbrace;</span></span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFont">66.66666667%<span class="monoFontPink">&lbrace;<span class="monoFontCyan">background-color: <span class="monoFontOrange">blue<span class="monoFont">;</span></span></span>&rbrace;</span></span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFont">83.33333333%<span class="monoFontPink">&lbrace;<span class="monoFontCyan">background-color: <span class="monoFontOrange">magenta<span class="monoFont">;</span></span></span>&rbrace;</span></span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFont">100%<span class="monoFontPink">&lbrace;<span class="monoFontCyan">background-color: <span class="monoFontOrange">red<span class="monoFont">;</span></span></span>&rbrace;</span></span>
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&rbrace;</span></span></span><br>
+                    <span class="monoFontGold">&nbsp;&nbsp;&nbsp;&nbsp;p&lbrace;</span><br>
+                    <span class="monoFontGold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFontCyan">font-family: <span class="monoFontOrange">Neutra Text TF</span></span><span class="monoFont">;</span></span><br>
+                    <span class="monoFontGold">&nbsp;&nbsp;&nbsp;&nbsp;&rbrace;</span><br>
+                    <span class="monoFontGold">&nbsp;&nbsp;&nbsp;&nbsp;.animation&lbrace;</span><br>
+                    <span class="monoFontGold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFontCyan">width: <span class="monoFontLime">100px<span class="monoFont">;</span></span></span></span><br>
+                    <span class="monoFontGold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFontCyan">height: <span class="monoFontLime">100px<span class="monoFont">;</span></span></span><br>
+                    <span class="monoFontGold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFontCyan">animation: <span class="monoFontOrange"><span class="monoFont">colourChange </span><span class="monoFontLime">6s </span>linear <span class="monoFontLime">0s </span>infinite normal forwards</span></span><span class="monoFont">;</span></span><br>
+                    <span class="monoFontGold">&nbsp;&nbsp;&nbsp;&nbsp;&rbrace;</span>
+                    <br>&nbsp;&nbsp;</span><span class="monoFontGrey">&lt;/<span class="monoFontBlue">style</span>></span><br>
+                    <!-- &nbsp;&nbsp;<span class="monoFontGreen">&lt;!-- JAVASCRIPT --&gt;</span><br> -->
+                    <span class="monoFontGrey">&nbsp;&nbsp;&lt;<span class="monoFontBlue">script</span>></span><span class="monoFont"><br>
+                    <span class="monoFontBlue">&nbsp;&nbsp;&nbsp;&nbsp;const <span class="monoFontTurquoise">button <span class="monoFont">= <span class="monoFontCyan">document</span>.<span class="monoFontYellow">getElementById<span class="monoFontGold">&lpar;<span class="monoFontOrange">"button"</span>&rpar;</span></span>;</span></span></span><br><br>
+                    <span class="monoFont">&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFontTurquoise">button</span>.<span class="monoFontYellow">addEventListener<span class="monoFontGold">&lpar;<span class="monoFontOrange">"click"<span class="monoFont">, <span class="monoFontBlue">function<span class="monoFontPink">&lpar;&rpar;&lbrace;<br><span class="monoFont">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="monoFontCyan">window</span>.<span class="monoFontYellow">alert<span class="monoFontTurquoise">&lpar;<span class="monoFontOrange">"Hello world!"</span>&rpar;</span></span>;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&rbrace;</span></span></span></span>&rpar;</span></span>;</span>
+                <br>&nbsp;&nbsp;</span><span class="monoFontGrey">&lt;/<span class="monoFontBlue">script</span>></span><br>
+            </span>
+            <span class="monoFontGrey">&lt;/<span class="monoFontBlue">body</span>></span><br>
+            <span class="monoFontGrey">&lt;/<span class="monoFontBlue">html</span>></span>
+        </div>
+        <div id="display" style="width: 50%; height: 100%; background-color: white; padding: 5px; overflow-y: auto;">
+            <div style="width: 100%; height: 30px; background-color: rgb(215, 215, 215);">
+                <p id="titleName" style="margin: 5px; color: black; font-size: x-large;">Document</p>
+            </div>
+            <h1 style="font-family: serif; color: black; text-align: start;">Heading</h1>
+            <p style="font-family: Neutra Text TF; color: black;">Hello world!</p>
+            <button onclick="alert('Hello world!')">Hello world!</button><br><br>
+            <div style="    width: 100px; height: 100px; animation: colourChange 6s linear 0s infinite normal forwards;"></div>
+            <a href="https://www.google.com/?zx=1768621219884&no_sw_cr=1">google.com</a>
+        </div>
+    </div><br>
+    <div style="width: 500px; height: 500px; background-color: var(--olo)"></div><br>
+    <div class="calculator">
+        <input type="text" name="calculatorDisplay" id="calculatorDisplay" readonly><br>
+        <button onclick="appendToDisplay('+')" class="operatorButton">+</button>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="leftParenthesis()">&lpar;</button>
+        <button onclick="rightParenthesis()">&rpar;</button>
+        <button onclick="sqrtfunc()">²√</button>
+        <button onclick="cbrtfunc()">³√</button>
+        <button onclick="facfunc()">!</button>
+        <button onclick="floorfunc()">floor</button><br>
+        <button onclick="appendToDisplay('-')" class="operatorButton">-</button>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="sinfunc()">sin</button>
+        <button onclick="cscfunc()">csc</button>
+        <button onclick="sinhfunc()">sinh</button>
+        <button onclick="cschfunc()">csch</button>
+        <button onclick="appendToDisplay('**2')">^2</button>
+        <button onclick="ceilfunc()">ceil</button><br>
+        <button onclick="appendToDisplay('*')" class="operatorButton">*</button>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="cosfunc()">cos</button>
+        <button onclick="secfunc()">sec</button>
+        <button onclick="coshfunc()">cosh</button>
+        <button onclick="sechfunc()">sech</button>
+        <button onclick="appendToDisplay('**3')">^3</button>
+        <button onclick="absfunc()">abs</button><br>
+        <button onclick="appendToDisplay('/')" class="operatorButton">/</button>
+        <button onclick="appendToDisplay('.')">.</button>
+        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="appendToDisplay('**')">^</button>
+        <button onclick="tanfunc()">tan</button>
+        <button onclick="cotfunc()">cot</button>
+        <button onclick="tanhfunc()">tanh</button>
+        <button onclick="cothfunc()">coth</button>
+        <button onclick="randfunc()">rand</button>
+        <button onclick="ans()">ans</button><br>
+        <button onclick="correctDisplay()" class="operatorButton">=</button>
+        <button onclick="appendToDisplay('π')">π</button>
+        <button onclick="appendToDisplay('e')">e</button>
+        <button onclick="appendToDisplay('Φ')">Φ</button>
+        <button onclick="appendToDisplay('1/')">¹/</button>
+        <button onclick="lnfunc()">ln</button>
+        <button onclick="log10func()">log₁₀</button>
+        <button onclick="appendToDisplay('e**')">e^</button>
+        <button onclick="appendToDisplay('10**')">10^</button>
+        <button onclick="clearDisplay()" class="clearButton">C</button>
+    </div>
+    <!-- CSS -->
+    <style>
+        /* Outfit */
+        @import url('https://fonts.cdnfonts.com/css/outfit');
+        /* VCR OSD Mono */
+        @import url('https://fonts.cdnfonts.com/css/vcr-osd-mono');
+        /* Terminal */
+        @import url('https://fonts.cdnfonts.com/css/terminal');
+        /* Neutra Text TF */
+        @import url('https://fonts.cdnfonts.com/css/neutra-text-tf');
+        
+        @property --olo{
+            syntax: "<color>";
+            inherits: false;
+            initial-value: rgb(0, 255, 205);
+        }
+        @keyframes colourChange{
+            0.000000000%{background-color: hsl(0, 100%, 50%);}
+            2.777777778%{background-color: hsl(10, 100%, 50%);}
+            5.555555556%{background-color: hsl(20, 100%, 50%);}
+            8.333333333%{background-color: hsl(30, 100%, 50%);}
+            11.11111111%{background-color: hsl(40, 100%, 50%);}
+            13.88888889%{background-color: hsl(50, 100%, 50%);}
+            16.66666667%{background-color: hsl(60, 100%, 50%);}
+            19.44444444%{background-color: hsl(70, 100%, 50%);}
+            22.22222222%{background-color: hsl(80, 100%, 50%);}
+            25.00000000%{background-color: hsl(90, 100%, 50%);}
+            27.77777778%{background-color: hsl(100, 100%, 50%);}
+            30.55555556%{background-color: hsl(110, 100%, 50%);}
+            33.33333333%{background-color: hsl(120, 100%, 50%);}
+            36.11111111%{background-color: hsl(130, 100%, 50%);}
+            38.88888889%{background-color: hsl(140, 100%, 50%);}
+            41.66666667%{background-color: hsl(150, 100%, 50%);}
+            44.44444444%{background-color: hsl(160, 100%, 50%);}
+            47.22222222%{background-color: hsl(170, 100%, 50%);}
+            50.00000000%{background-color: hsl(180, 100%, 50%);}
+            52.77777778%{background-color: hsl(190, 100%, 50%);}
+            55.55555556%{background-color: hsl(200, 100%, 50%);}
+            58.33333333%{background-color: hsl(210, 100%, 50%);}
+            61.11111111%{background-color: hsl(220, 100%, 50%);}
+            63.88888889%{background-color: hsl(230, 100%, 50%);}
+            66.66666667%{background-color: hsl(240, 100%, 50%);}
+            69.44444444%{background-color: hsl(250, 100%, 50%);}
+            72.22222222%{background-color: hsl(260, 100%, 50%);}
+            75.00000000%{background-color: hsl(270, 100%, 50%);}
+            77.77777778%{background-color: hsl(280, 100%, 50%);}
+            80.55555556%{background-color: hsl(290, 100%, 50%);}
+            83.33333333%{background-color: hsl(300, 100%, 50%);}
+            86.11111111%{background-color: hsl(310, 100%, 50%);}
+            88.88888889%{background-color: hsl(320, 100%, 50%);}
+            91.66666667%{background-color: hsl(330, 100%, 50%);}
+            94.44444444%{background-color: hsl(340, 100%, 50%);}
+            97.22222222%{background-color: hsl(350, 100%, 50%);}
+            100.0000000%{background-color: hsl(360, 100%, 50%);}
+        }
+        @keyframes rotate {
+            0%{transform: rotate(0deg);}
+            100%{transform: rotate(360deg);}
+        }
+        body{
+            margin: 0px;
+        }
+        button{
+            background-color: whitesmoke;
+            border-radius: 2px;
+            border-width: 0.05em;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: lightgrey;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation: colourChange 6s linear 0s infinite normal forwards;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: x-large;
+            font-weight: bold;
+            color: white;
+            -webkit-text-stroke: 0.7px black;
+            box-shadow: 8px 8px 10px black;
+        }
+        p:not(#text), label{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div h1{
+            color: white;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        svg{
+            border: 2px solid lightgray;
+            border-radius: 10px;
+        }
+        #divGradient{
+            width: 100%;
+            height: 200px;
+            background-image: linear-gradient(90deg, red, yellow, lime, blue, purple);
+            text-align: center;
+            color: white;
+            text-transform: uppercase;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 3em;
+        }
+        .javascriptIcon{
+            animation: rotate 4s cubic-bezier(0,1,1,0) 0s infinite normal forwards;
+        }
+        ruby{
+            font-size: 10em;
+        }
+        rt{
+            font-size: 0.2em;
+        }
+        .monoFont{
+            font-family: monospace;
+            color: white;
+        }
+        .monoFontGrey{
+            font-family: monospace;
+            color: grey;
+        }
+        .monoFontBlue{
+            font-family: monospace;
+            color: rgb(76, 134, 220);
+        }
+        .monoFontCyan{
+            font-family: monospace;
+            color: rgb(148, 223, 255);
+        }
+        .monoFontOrange{
+            font-family: monospace;
+            color: rgb(206, 133, 101);
+        }
+        .monoFontGreen{
+            font-family: monospace;
+            color: rgb(72, 138, 59);
+        }
+        .monoFontPink{
+            font-family: monospace;
+            color: rgb(227, 136, 227);
+        }
+        .monoFontGold{
+            font-family: monospace;
+            color: gold;
+        }
+        .monoFontYellow{
+            font-family: monospace;
+            color: rgb(255, 255, 160);
+        }
+        .monoFontTurquoise{
+            font-family: monospace;
+            color: rgb(109, 167, 255);
+        }
+        .monoFontLime{
+            font-family: monospace;
+            color: rgb(176, 236, 176);
+        }
+        .calculator{
+            width: fit-content;
+            background-color: rgb(50, 50, 50);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .calculator button{
+            margin: 2px;
+            width: 100px;
+            height: 100px;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .calculator button:not(.operatorButton, .clearButton){
+            border-style: none;
+            border-radius: 50px;
+            background-color: rgb(80, 80, 80);
+            color: white;
+        }
+        .calculator button:not(.operatorButton, .clearButton):hover{
+            background-color: rgb(120, 120, 120);
+        }
+        .calculator button:not(.operatorButton, .clearButton):active{
+            background-color: rgb(160, 160, 160);
+        }
+        .operatorButton{
+            border-style: none;
+            border-radius: 50px;
+            background-color: rgb(255, 149, 0);
+            color: white;
+        }
+        .operatorButton:hover{
+            background-color: rgb(255, 174, 60);
+        }
+        .operatorButton:active{
+            background-color: rgb(255, 199, 120);
+        }
+        .clearButton{
+            border-style: none;
+            border-radius: 50px;
+            background-color: firebrick;
+            color: white;
+        }
+        .clearButton:hover{
+            background-color: rgb(177, 90, 90);
+        }
+        .clearButton:active{
+            background-color: rgb(174, 120, 120);
+        }
+        .calculator input{
+            width: 100%;
+            height: 100px;
+            background-color: rgb(75, 75, 75);
+            border: none;
+            font-size: 5em;
+            color: white;
+            overflow-x: scroll;
+        }
+    </style>
+    <!-- JAVASCRIPT -->
+    <script>
+        const π = Math.PI;
+        const e = Math.E;
+        const Φ = (1+Math.sqrt(5))/2;
+        const img = document.getElementById("image");
+        const aud = document.getElementById("audio");
+        const vid = document.getElementById("video");
+        const boldButton = document.getElementById("boldButton");
+        const italicButton = document.getElementById("italicButton");
+        const underlineButton = document.getElementById("underlineButton");
+        const strikethroughButton = document.getElementById("strikethroughButton");
+        const biusText = document.getElementById("biusText");
+        const timeSelection1 = document.getElementById("timeSelection1");
+        const timeSelection2 = document.getElementById("timeSelection2");
+        const timeTotimeButton = document.getElementById("timeTotime");
+        const massSelection1 = document.getElementById("massSelection1");
+        const massSelection2 = document.getElementById("massSelection2");
+        const massToMassButton = document.getElementById("massToMass");
+        const timeInput = document.getElementById("time");
+        const massInput = document.getElementById("mass");
+        const timeText = document.getElementById("timeText");
+        const massText = document.getElementById("massText");
+        const box = document.getElementById("box");
+        const dateOfBirth = document.getElementById("dOB");
+        const submitDOB = document.getElementById("submitDOB");
+        const showDOB = document.getElementById("showDOB");
+        const timer = document.getElementById("timer");
+        const passwordGeneratorButton = document.getElementById("passwordGenerator");
+        const password = document.getElementById("password");
+        const htmlThingy = document.getElementById("htmlThingy");
+        const display = document.getElementById("display");
+        const calculatorDisplay = document.getElementById("calculatorDisplay");
+        const timeMathValues = [(5.39121*(10**-44)), //Planck Time
+                                (10**-24), //Yoctoseconds
+                                (10**-21), //Zeptoseconds
+                                (10**-18), //Attoseconds
+                                (10**-15), //Femtoseconds
+                                (10**-12), //Picoseconds
+                                (10**-9), //Nanoseconds
+                                (10**-6), //Microseconds
+                                0.001, //Milliseconds
+                                1, //Seconds
+                                60, //Minutes
+                                (60*60), //Hours
+                                (60*60*24), //Days
+                                (60*60*24*(365/12)), //Months
+                                (60*60*24*(365/12)*12), //Years
+                                (60*60*24*(365/12)*12*10), //Decades
+                                (60*60*24*(365/12)*12*100), //Centuries
+                                (60*60*24*(365/12)*12*1000) //Milleniums
+                                ];
+        const massMathValues = [(10**-24), //Yoctograms
+                                (10**-21), //Zeptograms
+                                (10**-18), //Attograms
+                                (10**-15), //Femtograms
+                                (10**-12), //Picograms
+                                (10**-9), //Nanograms
+                                (10**-6), //Micrograms
+                                0.001, //Milligrams
+                                0.01, //Centigrams
+                                0.1, //Decagrams
+                                1, //Grams
+                                10, //Decagrams
+                                100, //Hectograms
+                                1000, //Kilograms
+                                (1000**2), //Tons
+                                (1000**3), //Kilotons
+                                (1000**4), //Megatons
+                                (1000**5), //Gigatons
+                                (1000**6), //Teratons
+                                (1000**7), //Petatons
+                                (1000**8), //Exatons
+                                (1000**9) //Yottatons
+                                ];
+        const $1024bitInteger = 1.7976931348623157e+308; //Approximate result.
+        let boldEnabled = false;
+        let italicEnabled = false;
+        let underlineEnabled = false;
+        let strikethroughEnabled = false;
+        let textDecorationContent = "";
+        let timePlaceholder1 = timeSelection1.value;
+        let timePlaceholder2 = timeSelection2.value;
+        let massPlaceholder1 = massSelection1.value;
+        let massPlaceholder2 = massSelection2.value;
+        let timeIndex1 = timeMathValues.indexOf(1);
+        let timeIndex2 = timeMathValues.indexOf(1);
+        let massIndex1 = massMathValues.indexOf(1);
+        let massIndex2 = massMathValues.indexOf(1);
+        let x = 0;
+        let y = 0;
+        let num = 121747298;
+        let answer = 0;
+        
+        //Here you go, sir YandereDev 👍.
+        function isEven(number){
+            return (number%2 == 0);
+        }
+        function randomNumber(min, max){
+            if (min > max){
+                return (max+Math.floor(Math.random()*((min+1)-max)));
+            }
+            else if (min === undefined || max === undefined){
+                console.error("Both parameters have been undefined.");
+            }
+            else{
+                return (min+Math.floor(Math.random()*((max+1)-min)));
+            }
+        }
+        function changeText(elemId, text){
+            document.getElementById(elemId).textContent = text;
+        }
+        function randomYoutubeLink(){
+            // There is a 1/7.3786976e+19 chance that you'll get the video that you want.
+            // This doesn't work apparently, there's just a tiny chance that it will actually work.
+            const characters = [
+            "0","1","2","3","4","5","6","7",
+            "8","9","a","b","c","d","e","f",
+            "g","h","i","j","k","l","m","n",
+            "o","p","q","r","s","t","u","v",
+            "w","x","y","z","A","B","C","D",
+            "E","F","G","H","I","J","K","L",
+            "M","N","O","P","Q","R","S","T",
+            "U","V","W","X","Y","Z","-","_"
+        ]
+            let link = "https://www.youtube.com/watch?v="
+            for (let i = 0; i < 11; i++){
+                link += characters[randomNumber(0, characters.length-1)];
+            }
+            return link;
+        }
+        function passwordGenerator(){
+            const characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()_+{}|:\"<>?`-=[]\\;',./";
+            let password = ""
+            for (let i = 0; i < randomNumber(12, 20); i++){
+                password += characters.charAt(randomNumber(0, characters.length-1));
+            }
+            return password;
+        }
+        function randomArray(min, max, iterations){
+            const array = [];
+            for (let i = 0; i < iterations; i++){
+                array.push(randomNumber(min, max));
+            }
+            return array;
+        }
+        function sortArray(array, sortType){
+            array.sort(function(min, max){
+                if (sortType.toLowerCase() === "smallest to largest"){
+                    return (min - max);
+                }
+                else if(sortType.toLowerCase() === "largest to smallest"){
+                    return (max - min);
+                }
+            });
+            return array;
+        }
+        function appendToDisplay(value){calculatorDisplay.value += value;}
+        function clearDisplay(){calculatorDisplay.value = "";}
+        function leftParenthesis(){calculatorDisplay.value += "(";}
+        function rightParenthesis(){calculatorDisplay.value += ")";}
+        function sin(value){return Math.sin(value);}
+        function cos(value){return Math.cos(value);}
+        function tan(value){return Math.tan(value);}
+        function csc(value){return 1/Math.sin(value);}
+        function sec(value){return 1/Math.cos(value);}
+        function cot(value){return 1/Math.tan(value);}
+        function sinh(value){return Math.sinh(value);}
+        function cosh(value){return Math.cosh(value);}
+        function tanh(value){return Math.tanh(value);}
+        function csch(value){return 1/Math.sinh(value);}
+        function sech(value){return 1/Math.cosh(value);}
+        function coth(value){return 1/Math.tanh(value);}
+        function ln(value){return Math.log(value);}
+        function log10(value){return Math.log10(value);}
+        function sqrt(value){return Math.sqrt(value);}
+        function cbrt(value){return Math.cbrt(value);}
+        function fac(value){let num = 1; for (let i = 0; i < value; i++){
+            num *= (i+1);
+        } return num;}
+        function random(){return Math.random()}
+        function floor(value){return Math.floor(value);}
+        function ceil(value){return Math.ceil(value);}
+        function abs(value){return Math.abs(value);}
+        function ans(){calculatorDisplay.value += answer;}
+        function sinfunc(){appendToDisplay("sin(");}
+        function cosfunc(){appendToDisplay("cos(");}
+        function tanfunc(){appendToDisplay("tan(");}
+        function cscfunc(){appendToDisplay("csc(");}
+        function secfunc(){appendToDisplay("sec(");}
+        function cotfunc(){appendToDisplay("cot(");}
+        function sinhfunc(){appendToDisplay("sinh(");}
+        function coshfunc(){appendToDisplay("cosh(");}
+        function tanhfunc(){appendToDisplay("tanh(");}
+        function cschfunc(){appendToDisplay("csch(");}
+        function sechfunc(){appendToDisplay("sech(");}
+        function cothfunc(){appendToDisplay("coth(");}
+        function lnfunc(){appendToDisplay("ln(");}
+        function log10func(){appendToDisplay("log10(");}
+        function sqrtfunc(){appendToDisplay("sqrt(");}
+        function cbrtfunc(){appendToDisplay("cbrt(");}
+        function facfunc(){appendToDisplay("fac(");}
+        function randfunc(){appendToDisplay("random()");}
+        function floorfunc(){appendToDisplay("floor(");}
+        function ceilfunc(){appendToDisplay("ceil(");}
+        function absfunc(){appendToDisplay("abs(");}
+        function correctDisplay(){
+            try{
+                calculatorDisplay.value = eval(calculatorDisplay.value);
+                answer = calculatorDisplay.value
+            }
+            catch(error){
+                calculatorDisplay.value = "Error";
+            }
+        }
+        // function animateElement(id, animationName, duration, ease, delay, amount, direction){
+        //     const idElement = document.getElementById(id)
+        //     idElement.style.animation = animationName + " " + duration + " " + ease + " " + delay + " " + amount + " " + direction + " forwards";
+        // }
+
+        // animateElement("box", "colourChange", "6s", "ease-out", "0s", "infinite", "normal")
+        
+        timeInput.placeholder = timePlaceholder1;
+        timeTotimeButton.textContent = "Convert " + timePlaceholder1 + " to " + timePlaceholder2;
+        massInput.placeholder = massPlaceholder1;
+        massToMassButton.textContent = "Convert " + massPlaceholder1 + " to " + massPlaceholder2;
+        document.getElementById("isEven").textContent = isEven(num) + "; " + num + " is " + (isEven(num)?"even":"odd");
+        for (let i = 0; i < 100; i++){
+            console.log((i+1) + ": " + randomYoutubeLink());
+        }
+        for (let i = 0; i < 100; i++){
+            console.log(randomNumber(0,$1024bitInteger)/$1024bitInteger);
+        }
+        console.log(sortArray(randomArray(1, 1000, 1000), "smallest to largest"));
+        document.getElementById("titleName").textContent = document.getElementById("title").textContent;
+        //document.getElementById("display").innerHTML = document.getElementById("body").textContent;
+        //console.log("Your strong password is: " + passwordGenerator())
+        
+        document.addEventListener("keydown", function(event){
+            //console.log(event.key);
+            const keycode = event.key;
+            const speed = 10;
+            x += ((keycode == "d" || keycode == "D") - (keycode == "a" || keycode == "A")) * speed;
+            y += ((keycode == "w" || keycode == "W") - (keycode == "s" || keycode == "S")) * speed;
+            
+            box.style.left = x + "px";
+            box.style.bottom = y + "px";
+        });
+        passwordGeneratorButton.addEventListener("click", function(){
+            password.textContent = "Your password is: " + passwordGenerator();
+        });
+        img.addEventListener("change", function(event){
+            const output = document.getElementById('imgOut');
+            output.src = URL.createObjectURL(event.target.files[0]); //URL.createObjectURL() creates a secure URL for event.target.files[0];.
+            output.hidden = false;
+            console.log(event.target.files[0]);
+        });
+        aud.addEventListener("change", function(event){
+            const output = document.getElementById("audOut");
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.hidden = false;
+            console.log(event);
+        });
+        vid.addEventListener("change", function(event){
+            const output = document.getElementById("vidOut");
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.hidden = false;
+            console.log(event);
+        });
+        
+        submitDOB.addEventListener("click", function(){
+            showDOB.textContent = "You were born on " + dateOfBirth.value;
+        });
+        
+        boldButton.addEventListener("click", function(){
+            boldEnabled = !boldEnabled;
+            if (boldEnabled){
+                biusText.style.fontWeight = "bold";
+            }
+            else{
+                biusText.style.fontWeight = "normal";
+            }
+        });
+        italicButton.addEventListener("click", function(){
+            italicEnabled = !italicEnabled;
+            if (italicEnabled){
+                biusText.style.fontStyle = "italic";
+            }
+            else{
+                biusText.style.fontStyle = "normal";
+            }
+        });
+        underlineButton.addEventListener("click", function(){
+            underlineEnabled = !underlineEnabled;
+            if (underlineEnabled){
+                if (strikethroughEnabled){
+                    textDecorationContent = "underline line-through";
+                }
+                else{
+                    textDecorationContent = "underline";
+                }
+            }
+            else{
+                if (strikethroughEnabled){
+                    textDecorationContent = "line-through";
+                }
+                else{
+                    textDecorationContent = "";
+                }
+            }
+            biusText.style.textDecoration = textDecorationContent
+        });
+        strikethroughButton.addEventListener("click", function(){
+            strikethroughEnabled = !strikethroughEnabled;
+            if (strikethroughEnabled){
+                if (underlineEnabled){
+                    textDecorationContent = "underline line-through";
+                }
+                else{
+                    textDecorationContent = "line-through";
+                }
+            }
+            else{
+                if (underlineEnabled){
+                    textDecorationContent = "underline";
+                }
+                else{
+                    textDecorationContent = "";
+                }
+            }
+            biusText.style.textDecoration = textDecorationContent
+        });
+
+        timeSelection1.addEventListener("change", function(selection){
+            timeIndex1 = selection.target.selectedIndex;
+            console.log(timeIndex1);
+            
+            timePlaceholder1 = selection.target.value;
+            timeInput.placeholder = timePlaceholder1;
+            timeTotimeButton.textContent = "Convert " + timePlaceholder1 + " to " + timePlaceholder2;
+        });
+        timeSelection2.addEventListener("change", function(selection){
+            timeIndex2 = selection.target.selectedIndex;
+            console.log(timeIndex2);
+            
+            timePlaceholder2 = selection.target.value;
+            timeTotimeButton.textContent = "Convert " + timePlaceholder1 + " to " + timePlaceholder2;
+        });
+        timeTotimeButton.addEventListener("click", function(){
+            const placeholder = timeInput.placeholder;
+            const timeInpValue = timeInput.value
+            let plural1;
+            let plural2;
+            let slice1 = -1;
+            let slice2 = -1;
+            const calculatedTime = timeInpValue*(timeMathValues[timeIndex1]/timeMathValues[timeIndex2]);
+            if (timeSelection2.value !== "Centuries"){
+                if (Math.abs(calculatedTime) == 1){
+                    plural2 = "";
+                }
+                else{
+                    plural2 = "s";
+                }
+            }
+            else{
+                if (Math.abs(calculatedTime) == 1){
+                    plural2 = "y";
+                }
+                else{
+                    plural2 = "ies";
+                }
+            }
+            if (timeSelection1.value === "Centuries"){
+                slice1 = -3;
+            }
+            else{
+                slice1 = -1;
+            }
+            if (timeSelection2.value === "Centuries"){
+                slice2 = -3;
+            }
+            else{
+                slice2 = -1;
+            }
+            if (timeInpValue === ""){
+                timeText.textContent = "Please enter a value";
+            }
+            else{
+                if (placeholder !== "Centuries"){
+                    if (Math.abs(timeInpValue) == 1){
+                        plural1 = "";
+                    }
+                    else{
+                        plural1 = "s";
+                    }
+                }
+                else{
+                    if (Math.abs(timeInpValue) == 1){
+                        plural1 = "y";
+                    }
+                    else{
+                        plural1 = "ies";
+                    }
+                }
+                if (timePlaceholder1 !== "Planck Time" && timePlaceholder2 !== "Planck Time"){
+                    timeText.textContent = timeInpValue + " " + timePlaceholder1.toLowerCase().slice(0, slice1) + plural1 + " is " + calculatedTime + " " + timePlaceholder2.toLowerCase().slice(0, slice2) + plural2;
+                }
+                else if(timePlaceholder1 !== "Planck Time"){
+                    timeText.textContent = timeInpValue + " " + timePlaceholder1.toLowerCase().slice(0, slice1) + plural1 + " is " + calculatedTime + " " + timePlaceholder2.toLowerCase() + plural2;
+                }
+                else if(timePlaceholder2 !== "Planck Time"){
+                    timeText.textContent = timeInpValue + " " + timePlaceholder1.toLowerCase() + plural1 + " is " + calculatedTime + " " + timePlaceholder2.toLowerCase().slice(0, slice2) + plural2;
+                }
+                else{
+                    timeText.textContent = timeInpValue + " " + timePlaceholder1.toLowerCase() + plural1 + " is " + calculatedTime + " " + timePlaceholder2.toLowerCase() + plural2;
+                }
+            }
+        });
+
+       massSelection1.addEventListener("change", function(selection){
+            massIndex1 = selection.target.selectedIndex;
+            //console.log(massIndex1);
+            
+            massPlaceholder1 = selection.target.value;
+            massInput.placeholder = timePlaceholder1;
+            massToMassButton.textContent = "Convert " + massPlaceholder1 + " to " + massPlaceholder1;
+        });
+        massSelection2.addEventListener("change", function(selection){
+            massIndex2 = selection.target.selectedIndex;
+            //console.log(massIndex2);
+            
+            massPlaceholder2 = selection.target.value;
+            massToMassButton.textContent = "Convert " + massPlaceholder2 + " to " + massPlaceholder2;
+        });
+        massToMassButton.addEventListener("click", function(){
+            const placeholder = massInput.placeholder;
+            const massImpValue = massInput.value
+            let plural1;
+            let plural2;
+            let slice1 = -1;
+            let slice2 = -1;
+            const calculatedTime = massImpValue*(massMathValues[massIndex1]/massMathValues[massIndex2]);
+            
+            if (Math.abs(massImpValue) == 1){
+                plural1 = "";
+            }
+            else{
+                plural1 = "s";
+            }
+            if (Math.abs(calculatedTime) == 1){
+                plural2 = "";
+            }
+            else{
+                plural2 = "s";
+            }
+            if (massImpValue === ""){
+                massText.textContent = "Please enter a value";
+            }
+            else{
+                massText.textContent = massImpValue + " " + massPlaceholder1.toLowerCase().slice(0, -1) + plural1 + " is " + calculatedTime + " " + massPlaceholder2.toLowerCase().slice(0, -1) + plural2;
+            }
+        });
+    </script>
+</body>
+</html>

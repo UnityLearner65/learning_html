@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculate Time from Date</title>
+</head>
+<body>
+    <label for="day">Day:</label>
+    <input type="number" id="day" min="1" max="31" placeholder="DD">
+
+    <label for="month">Month:</label>
+    <input type="number" id="month" min="1" max="12" placeholder="MM">
+
+    <label for="year">Year:</label>
+    <input type="number" id="year" min="1900" max="2100" placeholder="YYYY">
+
+    <button onclick="calculateTime()">Calculate Time</button>
+
+    <p>Elapsed time since date: <span id="output"></span></p>
+
+    <script>
+        function calculateTime() {
+            const day = parseInt(document.getElementById("day").value);
+            const month = parseInt(document.getElementById("month").value) - 1; // JavaScript months 0-11
+            const year = parseInt(document.getElementById("year").value);
+
+            const inputDate = new Date(year, month, day);
+            const now = new Date();
+
+            if (isNaN(inputDate.getTime())) {
+                document.getElementById("output").innerText = "Invalid date";
+                return;
+            }
+
+            if (inputDate > now) {
+                document.getElementById("output").innerText = "Date is in the future";
+                return;
+            }
+
+            // Calculate difference in milliseconds
+            const diffMs = now - inputDate;
+
+            // Convert to days, hours, mins
+            const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+            const diffHours = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
+            const diffMinutes = Math.floor((diffMs / (1000 * 60)) % 60);
+
+            document.getElementById("output").innerText =
+                `${diffDays} days, ${diffHours} hours, and ${diffMinutes} minutes ago`;
+        }
+    </script>
+</body>
+</html>

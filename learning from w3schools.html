@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="file:///C:/users/ziyad/OneDrive/Pictures/Saved%20Pictures/html%20css%20js.jpg" type="image/x-icon">
+    <title>Learning from W3schools</title>
+</head>
+<body id="body">
+    <!-- HTML -->
+    <button id="timeButton">Years since 01/01/1970</button>
+    <p id="date"></p>
+    <button id="currDate">Get current date</button>
+    <p id="getCurrDate"></p>
+    <label>Days: </label><input type="number" name="Days" id="daysAmount" min="0" max="31">   
+    <label>Months: </label><input type="number" name="Months" id="monthsAmount" min="0" max="12">    
+    <label>Years: </label><input type="number" name="Years" id="yearsAmount" min="0" max="9999">  
+    <br>
+    <button id="calculateTime">Calculate DD/MM/YYYY to Days</button>
+    <p id="calculatedTime"></p>
+    <button id="boldButton"><b>B</b></button>
+    <button id="italicButton"><i>I</i></button>
+    <button id="underlineButton"><u>U</u></button>
+    <button id="strikethroughButton"><s>S</s></button>
+    <p id="biusParagraph">The quick brown fox jumps over the lazy dog</p>
+    <p>Degrees to Fahrenheit and Kelvin</p>
+    <label>Degrees: </label><input type="number" name="Degrees" id="degrees" min="-999999999" max="999999999">
+    <br>
+    <button id="calcDegrees">Calculate temperature</button>
+    <p id="degToFahAndKel"></p>
+    <p id="n1+n2"></p>
+    <p><u>Disco ball effect</u></p>
+    <video controls>
+        <source src="file:///C:/Users/Ziyad/Videos/Blender/disco%20ash.mp4">
+    </video>
+    <br>
+    <img id="luckyBlock" src="https://media.forgecdn.net/avatars/thumbnails/491/203/256/256/637799866799448709.png" alt="click on me for a prize" width="300px" height="300px">
+    <p id="getSomethingLOL"></p>
+    <p id="hideWhenLuckyBlockClicked">click on this lucky block for a prize</p>
+    <div id="iCanMove">📦</div>
+    <!-- CSS -->
+    <style>
+        body{
+            margin: 0;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        p:not(#biusParagraph, #getSomethingLOL){
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+        }
+        #biusParagraph{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+        }
+        div{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+        }
+        #iCanMove{
+            background-color: lightblue;
+            width: 200px;
+            height: 200px;
+            font-size: 8em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        label{
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input{
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button:not(#boldButton, #italicButton, #underlineButton, #strikethroughButton){
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        #boldButton, #italicButton, #underlineButton, #strikethroughButton{
+            font-size: 1.1em;
+        }
+        video{
+            width: 500px;
+            border-radius: 10px;
+        }
+        #getSomethingLOL{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 2em;
+        }
+    </style>
+    <!-- JAVASCRIPT -->
+    <script>
+        let x = 5;
+        let y = 6;
+        let bold = false;
+        let italic = false;
+        let underline = false;
+        let strikethrough = false;
+        let underlineFormat = "";
+        let strikethroughFormat = "";
+        let boxX = 0;
+        let boxY = 0;
+        let boxMoveSpeed = 10;
+        let clickDebounce = false;
+        const body = document.getElementById("body");
+        const timeButton = document.getElementById("timeButton");
+        const currentDate = document.getElementById("currDate");
+        const calcTimeButton = document.getElementById("calculateTime");
+        const boldButton = document.getElementById("boldButton");
+        const italicButton = document.getElementById("italicButton");
+        const underlineButton = document.getElementById("underlineButton");
+        const strikethroughButton = document.getElementById("strikethroughButton");
+        const biusParagraph = document.getElementById("biusParagraph");
+        const calcDegrees = document.getElementById("calcDegrees");
+        const iCanMove = document.getElementById("iCanMove");
+        const hideWhenLuckyBlockClicked = document.getElementById("hideWhenLuckyBlockClicked");
+        const luckyBlock = document.getElementById("luckyBlock");
+        const getSomethingLOL = document.getElementById("getSomethingLOL");
+        const getSomethingLOLImages = ["https://images.genius.com/ec92ebc969838f23c3e42c9fdc6e7c2b.300x300x1.png", "https://c.tenor.com/P-bmt667a_oAAAAd/tenor.gif", "https://i.makeagif.com/media/9-08-2023/2du25R.gif"];
+        const getSomethingLOLAudio = ["file:///C:/Users/Ziyad/OneDrive/Music/SFX/you've%20been%20gnomed%20edited.mp3", "file:///C:/Users/Ziyad/OneDrive/Music/SFX/stickbug%20meme.mp3", "file:///C:/Users/Ziyad/OneDrive/Music/SFX/coconut%20malled.mp3"];
+        const getSomethingLOLText = ["GET GNOMED LOL!!", "GET STICKBUGGED LOL!!", "GET COCONUT MALLED LOL!!"];
+        const randomGetSomethingLOL = (Math.floor(Math.random()*getSomethingLOLImages.length));
+
+        function roundNumber(number, decimalPlaces){
+            let roundedNumber = Math.round(number * (10**decimalPlaces)) / (10**decimalPlaces);
+            return roundedNumber;
+        }
+        function updateBIUSParagraph(){
+            biusParagraph.style.textDecoration = underlineFormat + strikethroughFormat;
+            console.log(underlineFormat + strikethroughFormat);
+        }
+
+        timeButton.addEventListener("click", function(){
+            let milliseconds = 1000;
+            let seconds = milliseconds * 1;
+            let minutes = seconds * 60;
+            let hours = minutes * 60;
+            let days = hours * 24;
+            let years = days * 365;
+            let date = new Date();
+            document.getElementById("date").textContent = "It's been " + roundNumber((date.getTime()/years), 2) + " years since 1st January 1970.";
+        })
+        currentDate.addEventListener("click", function(){
+            let currDate = new Date();
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            let dateAbbrev
+            if (currDate.getUTCDay() == 1 || currDate.getUTCDay() == 21 || currDate.getUTCDay() == 31){
+                dateAbbrev = "st";
+            }
+            else if (currDate.getUTCDay() == 2 || currDate.getUTCDay() == 22){
+                dateAbbrev = "nd";
+            }
+            else if (currDate.getUTCDay() == 3 || currDate.getUTCDay() == 23){
+                dateAbbrev = "rd";
+            }
+            else{
+                dateAbbrev = "th";
+            }
+            document.getElementById("getCurrDate").textContent = "The current date is " + 
+            currDate.getUTCDate() + "/" + (currDate.getUTCMonth() + 1) + "/" + currDate.getUTCFullYear()
+                + " (" + days[currDate.getUTCDay()] + " " + currDate.getUTCDate() + dateAbbrev + " " 
+                + months[currDate.getUTCMonth()] + " " + currDate.getUTCFullYear() + ")";
+        })
+        calcTimeButton.addEventListener("click", function(){
+            let daysAmount = document.getElementById("daysAmount").value;
+            let monthsAmount = document.getElementById("monthsAmount").value * 31;
+            let yearsAmount = document.getElementById("yearsAmount").value * 365;
+            let calcDaysSum = (Number(daysAmount) + Number(monthsAmount) + Number(yearsAmount));
+            let plural = "";
+            if (calcDaysSum == 1){
+                plural = " day";
+            }
+            else{
+                plural = " days";
+            }
+            document.getElementById("calculatedTime").textContent = (calcDaysSum + plural);
+        })
+        boldButton.addEventListener("click", function(){
+            bold = !bold;
+            if (bold){
+                biusParagraph.style.fontWeight = "bold";
+            }
+            else{
+                biusParagraph.style.fontWeight = "normal";
+            }
+        })
+        italicButton.addEventListener("click", function(){
+            italic = !italic;
+            if (italic){
+                biusParagraph.style.fontStyle = "italic";
+            }
+            else{
+                biusParagraph.style.fontStyle = "normal";
+            }
+        })
+        underlineButton.addEventListener("click", function(){
+            underline = !underline;
+            if (underline){
+                underlineFormat = "underline ";
+            }
+            else{
+                underlineFormat = "";
+            }
+            updateBIUSParagraph();
+        })
+        strikethroughButton.addEventListener("click", function(){
+            strikethrough = !strikethrough;
+            if (strikethrough){
+                strikethroughFormat = "line-through";
+            }
+            else{
+                strikethroughFormat = "";
+            }
+            updateBIUSParagraph();
+        })
+        calcDegrees.addEventListener("click", function(){
+            let degrees = document.getElementById("degrees").value;
+            document.getElementById("degToFahAndKel").textContent = degrees 
+                + "°C to Fahrenheit and Kelvin is: " + (degrees * 1.8 + 32) 
+                + "°F and " + (Number(degrees) + 273.15) + "K";
+        })
+        luckyBlock.addEventListener("click", function(){
+            if (!clickDebounce){
+                clickDebounce = true;
+                luckyBlock.src = getSomethingLOLImages[randomGetSomethingLOL];
+                const audio = new Audio(getSomethingLOLAudio[randomGetSomethingLOL]);
+                audio.play();
+                getSomethingLOL.textContent = getSomethingLOLText[randomGetSomethingLOL];
+                hideWhenLuckyBlockClicked.textContent = "";
+            }
+        })
+        document.addEventListener("keydown", function(pressedKey){
+            const key = pressedKey.key;
+            const upKeysPressed = (key == "w" || key == "ArrowUp");
+            const downKeysPressed = (key == "s" || key == "ArrowDown");
+            const leftKeysPressed = (key == "a" || key == "ArrowLeft");
+            const rightKeysPressed = (key == "d" || key == "ArrowRight");
+            console.log(key);
+            boxX += (rightKeysPressed - leftKeysPressed) * boxMoveSpeed;
+            boxY -= (upKeysPressed - downKeysPressed) * boxMoveSpeed;
+            iCanMove.style.left = Number(boxX) + "px";
+            iCanMove.style.top = Number(boxY) + "px";
+        })
+        document.getElementById("n1+n2").textContent = (x + "+" + y + "=" + (x + y));
+    </script>
+</body>
+</html>

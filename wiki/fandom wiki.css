@@ -1,0 +1,62 @@
+@font-face {
+    font-family: determination;
+    src: url(/Users/Ziyad/Downloads/DTM-Mono.woff2);
+}
+@font-face{
+    font-family: mercy;
+    src: url(/Users/Ziyad/Downloads/mercy.ttf/mercy.ttf);
+}
+@font-face {
+    font-family: papyrus;
+    src: url(/Users/Ziyad/Downloads/papyrus-font-1751248186-0/papyrus.ttf);
+}
+h1{
+    font-family: mercy;
+    font-weight: lighter;
+    color: white;
+    text-align: center;
+    font-size: 3em;
+}
+h2{
+    font-family: determination;
+    color: white;
+    font-size: 2em;
+}
+p{
+    font-weight: bold;
+    font-family: determination;
+    color:white;
+}
+a{
+    font-family: determination;
+    color: gold;
+    text-decoration: none;
+}
+li{
+    font-family: determination;
+    text-align: left;
+    font-size: 1.5em;
+}
+a:hover{
+    text-decoration: underline;
+    color: blanchedalmond;
+}
+table, td, th{
+    border:2px solid white;
+    border-radius: 10px;
+    margin: auto;
+    width: 1000px;
+    text-align: center;
+}
+.sans{
+    font-family: cursive;
+}
+.papyrus{
+    font-family: papyrus;
+}
+.large{
+    font-size: 2em;
+}
+li::marker{
+    color:gold
+}

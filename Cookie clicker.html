@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie clicker</title>
+</head>
+<body>
+    <!-- HTML -->
+    <h1 class="cookieValue" id="amount">Cookies: 0</h1>
+    <img class="cookie" id="clicker" src="https://pngimg.com/d/cookie_PNG13683.png" draggable="false">
+    <audio id="clickSound">
+        <source src="C:\Users\Ziyad\OneDrive\Music\SFX\bear trap.mp3">
+    </audio>
+    <!-- CSS -->
+    <style>
+        body{
+            background-color: rgb(31, 61, 116);
+        }
+        .cookieValue{
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        .cookie{
+            width: 20%;
+        }
+    </style>
+    <!-- JAVASCRIPT -->
+    <script>
+        let value = 0;
+        const clickSound = document.getElementById("clickSound")
+        const clickerButton = document.getElementById("clicker");
+        const amountOfClicked = document.getElementById("amount");
+        function updateDisplay(){
+            amountOfClicked.textContent = "Cookies: " + value;
+        }
+        function click(){
+            clickSound.play();
+            value = value + 1;
+            updateDisplay();
+        }
+        clickerButton.addEventListener("click", click);
+    </script>
+</body>
+</html>

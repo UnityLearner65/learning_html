@@ -1,0 +1,13 @@
+div {
+    margin: 1rem auto;
+    background-color: #ff0080;
+    rotate:180deg;
+    transform: translate(410px,780px);
+}
+  
+  .semi-circle {
+    width: 12rem;
+    height: 4rem;
+    background-color: #ff0080;
+    border-radius: 10rem 10rem 0 0;
+}

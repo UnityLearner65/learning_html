@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML -->
+    <label class="hacker" id="progressBar1Label" for="progressBar1"><span id="hackerId"></span></label>
+    <progress id="progressBar1"></progress>
+    <!-- CSS -->
+    <style>
+        /* TAG STYLES */
+        body{
+            background-color: black;
+        }
+        progress{
+            width: 20em;
+            height: 2em;
+            accent-color: lime;
+            position: absolute;
+        }
+        /* CLASS STYLES */
+        .hacker{
+            font-size: 2em;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: lime;
+        }
+        /* ID STYLES */
+    </style>
+    <!-- JAVASCRIPT -->
+    <script>
+        // VARIABLES
+        const progressBar1 = document.getElementById("progressBar1")
+        const progressBar1Label = document.getElementById("progressBar1Label")
+        const hackerId = document.getElementById("hackerId")
+        let fileCount = Math.random(1000, 10000)
+        let fileStart = 0
+        // FUNCTIONS
+        function progressBar1Data(val, maxVal){
+            if (val <= maxVal){
+                progressBar1.max = maxVal
+                progressBar1.value = val
+                progressBar1Label.innerText = "DELETED FILES: " + Math.round((val/maxVal)*100) + "%"
+            }
+            else{
+                console.error("val is higher than maxVal, cannot exceed")
+            }
+        }
+        function waitFor(ms){
+            return new Promise(resolve => setTimeout(resolve, ms))
+        }
+        async function beginWait(){
+            await waitFor(100)
+        }
+        // MAIN CODE
+        for (let d = fileStart; d < fileCount; d += 0.5){
+            progressBar1Data(d, fileCount)
+        }
+    </script>
+</body>
+</html>

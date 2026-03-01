@@ -10,10 +10,14 @@
     <!-- HTML -->
     <noscript>Sorry, your browser can't support javascript.<br>Please enable it in (Settings -> <br>Privacy and security -> <br>Site settings -> <br>JavaScript) and enable it</noscript>
     <div id="calculator">
-        <label for="radDeg" class="radDeg">Radians:</label>
-        <input type="checkbox" name="radDeg" id="radDeg">
-        <label for="hyperbolic" class="hyperbolic">Hyp:</label>
-        <input type="checkbox" name="hyperbolic" id="hyperbolic">
+        <div id="checkboxes">
+            <label for="radDeg" class="radDeg">Radians:</label>
+            <input type="checkbox" name="radDeg" id="radDeg">
+            <label for="hyperbolic" class="hyperbolic">Hyp:</label>
+            <input type="checkbox" name="hyperbolic" id="hyperbolic">
+            <label for="glow" class="glow">Glow:</label>
+            <input type="checkbox" name="glow" id="glow">
+        </div>
         <input type="text" name="calculatorDisplay" id="calculatorDisplay" spellcheck="false" readonly><br>
         <div id="buttons">
             <button class="operatorButton">+</button>
@@ -36,7 +40,7 @@
             <button>acsc&lpar;</button>
             <button>^2</button>
             <button>floor&lpar;</button>
-            <button class="operatorButton">×</button>
+            <button class="operatorButton">&times;</button>
             <button>7</button>
             <button>8</button>
             <button>9</button>
@@ -46,7 +50,7 @@
             <button>asec&lpar;</button>
             <button>^3</button>
             <button>ceil&lpar;</button>
-            <button class="operatorButton">÷</button>
+            <button class="operatorButton">&divide;</button>
             <button>.</button>
             <button>0</button>
             <button>^</button>
@@ -70,8 +74,7 @@
     </div>
     <div id="history">
         <button id="clearHistory">Clear history</button>
-        <ul id="list">
-        </ul>
+        <ul id="list"></ul>
     </div>
     <!-- CSS -->
     <style>
@@ -110,7 +113,7 @@
             box-shadow: 0px 0px 20px black;
             margin-left: 10px;
             width: 400px;
-            height: 966.667px;
+            height: 966px;
             overflow-y: auto;
             position: relative;
         }
@@ -142,6 +145,15 @@
         }
         #calculatorDisplay{
             outline: none;
+            width: 100%;
+            height: 150px;
+            background-color: rgb(75, 75, 75);
+            border: none;
+            font-size: 5.5em;
+            color: white;
+            text-shadow: 0px 0px var(--text-glow) white;
+            padding: 10px;
+            box-sizing: border-box;
         }
         #buttons{
             display: grid;
@@ -190,17 +202,6 @@
         .clearButton:active{
             background-color: rgb(174, 120, 120);
         }
-        #calculator #calculatorDisplay{
-            width: 100%;
-            height: 150px;
-            background-color: rgb(75, 75, 75);
-            border: none;
-            font-size: 5.5em;
-            color: white;
-            text-shadow: 0px 0px var(--text-glow) white;
-            padding: 10px;
-            box-sizing: border-box;
-        }
         #calculator label{
             font-family: Arial, Helvetica, sans-serif;
             color: white;
@@ -209,25 +210,16 @@
             font-size: large;
             font-size: 2em;
         }
-        #calculator input[type="checkbox"]{
+        #checkboxes input[type="checkbox"]{
             width: 1.5em;
             height: 1.5em;
         }
-        #calculator input[type="checkbox"]:checked{
+        #checkboxes input[type="checkbox"]:checked{
             accent-color: var(--checkbox-accent-color);
             box-shadow: 0px 0px var(--checkbox-glow) var(--checkbox-accent-color);
         }
-        #calculator .radDeg, #radDeg{
-            position: relative;
-            left: 10px;
-        }
-        #calculator .hyperbolic, #hyperbolic{
-            position: relative;
-            left: 20px;
-        }
-        #calculator .glowToggle, #glowToggle{
-            position: relative;
-            left: 30px;
+        #checkboxes{
+            margin-left: 10px;
         }
     </style>
     <!-- JAVASCRIPT -->

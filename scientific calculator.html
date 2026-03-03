@@ -28,6 +28,7 @@
             <button>cbrt&lpar;</button>
             <button>fact&lpar;</button>
             <button>round&lpar;</button>
+            <button>LCM&lpar;</button>
             <button class="operatorButton">-</button>
             <button>4</button>
             <button>5</button>
@@ -38,6 +39,7 @@
             <button>acsc&lpar;</button>
             <button>^2</button>
             <button>floor&lpar;</button>
+            <button>GCD&lpar;</button>
             <button class="operatorButton">&times;</button>
             <button>7</button>
             <button>8</button>
@@ -48,6 +50,7 @@
             <button>asec&lpar;</button>
             <button>^3</button>
             <button>ceil&lpar;</button>
+            <button>sign&lpar;</button>
             <button class="operatorButton">&divide;</button>
             <button>.</button>
             <button>0</button>
@@ -58,9 +61,11 @@
             <button>acot&lpar;</button>
             <button>rand&lpar;&rpar;</button>
             <button>abs&lpar;</button>
+            <button>mod&lpar;</button>
             <button class="operatorButton">=</button>
             <button>π</button>
             <button>e</button>
+            <button>,</button>
             <button>1/</button>
             <button>ln&lpar;</button>
             <button>log10&lpar;</button>
@@ -155,7 +160,7 @@
         }
         #buttons{
             display: grid;
-            grid-template-columns: repeat(10, 1fr);
+            grid-template-columns: repeat(11, 1fr);
         }
         #buttons button{
             padding: 0px;
@@ -237,7 +242,7 @@
         let answer = 0;
         let charsAdded = [];
         let parenthesisAmnt = 0;
-        
+
         function appendToDisplay(value){calculatorDisplay.value = value.join("");}
         function backspace(){
             const index = charsAdded.lastIndexOf(charsAdded[charsAdded.length-1]);
@@ -249,6 +254,15 @@
             }
             charsAdded.splice(index, 1); 
             calculatorDisplay.value = charsAdded.join("");
+        }
+        function calculateFactors(value){
+            let factors = [];
+            for (let i = 1; i <= value; i++){
+                if (value%i == 0){
+                    factors.push(i);
+                }
+            }
+            return factors;
         }
         function sin(value){return Math.sin(value*((degrees)?(π/180):(1)));}
         function cos(value){return Math.cos(value*((degrees)?(π/180):(1)));}
@@ -286,6 +300,40 @@
         function floor(value){return Math.floor(value);}
         function ceil(value){return Math.ceil(value);}
         function abs(value){return Math.abs(value);}
+        function LCM(value1, value2){
+            let multiples1 = [];
+            let multiples2 = [];
+            let equalMultiples = [];
+
+            for (let i = 0; i < 100; i++){
+                multiples1.push(value1*(i+1));
+                multiples2.push(value2*(i+1));
+            }
+            for (let i = 0; i < multiples1.length; i++){
+                for (let j = 0; j < multiples2.length; j++){
+                    if (multiples1[i] == multiples2[j]){
+                        equalMultiples.push(multiples1[i])
+                    }
+                }
+            }
+            return equalMultiples[0];
+        }
+        function GCD(value1, value2){
+            let factors1 = calculateFactors(value1);
+            let factors2 = calculateFactors(value2);
+            let equalFactors = [];
+
+            for (let i = 0; i < factors1.length; i++){
+                for (let j = 0; j < factors2.length; j++){
+                    if (factors1[i] == factors2[j]){
+                        equalFactors.push(factors1[i])
+                    }
+                }
+            }
+            return equalFactors[equalFactors.length-1];
+        }
+        function sign(value){return (value/abs(value))}
+        function mod(value1, value2){return (value1%value2)}
         function ans(){return Number(answer);}
         function correctDisplay(){
             try{

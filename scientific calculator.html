@@ -318,7 +318,7 @@
             for (let i = 0; i < multiples1.length; i++){
                 for (let j = 0; j < multiples2.length; j++){
                     if (multiples1[i] == multiples2[j]){
-                        equalMultiples.push(multiples1[i])
+                        equalMultiples.push(multiples1[i]);
                     }
                 }
             }
@@ -332,14 +332,14 @@
             for (let i = 0; i < factors1.length; i++){
                 for (let j = 0; j < factors2.length; j++){
                     if (factors1[i] == factors2[j]){
-                        equalFactors.push(factors1[i])
+                        equalFactors.push(factors1[i]);
                     }
                 }
             }
             return equalFactors[equalFactors.length-1];
         }
-        function sign(value){return (value/abs(value))}
-        function mod(value1, value2){return (value1%value2)}
+        function sign(value){return (value/abs(value));}
+        function mod(value1, value2){return (value1%value2);}
         function ans(){return Number(answer);}
         function correctDisplay(){
             try{

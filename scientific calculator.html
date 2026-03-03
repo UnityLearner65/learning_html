@@ -9,75 +9,77 @@
 <body>
     <!-- HTML -->
     <noscript>Sorry, your browser can't support javascript.<br>Please enable it in (Settings -> <br>Privacy and security -> <br>Site settings -> <br>JavaScript) and enable it</noscript>
-    <div id="calculator">
-        <div id="checkboxes">
-            <label for="radDeg" class="radDeg">Radians:</label>
-            <input type="checkbox" name="radDeg" id="radDeg">
-            <label for="hyperbolic" class="hyperbolic">Hyp:</label>
-            <input type="checkbox" name="hyperbolic" id="hyperbolic">
+    <div id="main">
+        <div id="calculator">
+            <div id="checkboxes">
+                <label for="radDeg" class="radDeg">Radians:</label>
+                <input type="checkbox" name="radDeg" id="radDeg">
+                <label for="hyperbolic" class="hyperbolic">Hyp:</label>
+                <input type="checkbox" name="hyperbolic" id="hyperbolic">
+            </div>
+            <input type="text" name="calculatorDisplay" id="calculatorDisplay" spellcheck="false" readonly><br>
+            <div id="buttons">
+                <button class="operatorButton">+</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>&lpar;</button>
+                <button>&rpar;</button>
+                <button>sqrt&lpar;</button>
+                <button>cbrt&lpar;</button>
+                <button>fact&lpar;</button>
+                <button>round&lpar;</button>
+                <button>LCM&lpar;</button>
+                <button class="operatorButton">-</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>sin&lpar;</button>
+                <button>csc&lpar;</button>
+                <button>asin&lpar;</button>
+                <button>acsc&lpar;</button>
+                <button>^2</button>
+                <button>floor&lpar;</button>
+                <button>GCD&lpar;</button>
+                <button class="operatorButton">&times;</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>cos&lpar;</button>
+                <button>sec&lpar;</button>
+                <button>acos&lpar;</button>
+                <button>asec&lpar;</button>
+                <button>^3</button>
+                <button>ceil&lpar;</button>
+                <button>sign&lpar;</button>
+                <button class="operatorButton">&divide;</button>
+                <button>.</button>
+                <button>0</button>
+                <button>^</button>
+                <button>tan&lpar;</button>
+                <button>cot&lpar;</button>
+                <button>atan&lpar;</button>
+                <button>acot&lpar;</button>
+                <button>rand&lpar;&rpar;</button>
+                <button>abs&lpar;</button>
+                <button>mod&lpar;</button>
+                <button class="operatorButton">=</button>
+                <button>π</button>
+                <button>e</button>
+                <button>,</button>
+                <button>1/</button>
+                <button>ln&lpar;</button>
+                <button>log10&lpar;</button>
+                <button>e^</button>
+                <button>10^</button>
+                <button>ans&lpar;&rpar;</button>
+                <button class="clearButton">C</button>
+            </div>
         </div>
-        <input type="text" name="calculatorDisplay" id="calculatorDisplay" spellcheck="false" readonly><br>
-        <div id="buttons">
-            <button class="operatorButton">+</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>&lpar;</button>
-            <button>&rpar;</button>
-            <button>sqrt&lpar;</button>
-            <button>cbrt&lpar;</button>
-            <button>fact&lpar;</button>
-            <button>round&lpar;</button>
-            <button>LCM&lpar;</button>
-            <button class="operatorButton">-</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>sin&lpar;</button>
-            <button>csc&lpar;</button>
-            <button>asin&lpar;</button>
-            <button>acsc&lpar;</button>
-            <button>^2</button>
-            <button>floor&lpar;</button>
-            <button>GCD&lpar;</button>
-            <button class="operatorButton">&times;</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>cos&lpar;</button>
-            <button>sec&lpar;</button>
-            <button>acos&lpar;</button>
-            <button>asec&lpar;</button>
-            <button>^3</button>
-            <button>ceil&lpar;</button>
-            <button>sign&lpar;</button>
-            <button class="operatorButton">&divide;</button>
-            <button>.</button>
-            <button>0</button>
-            <button>^</button>
-            <button>tan&lpar;</button>
-            <button>cot&lpar;</button>
-            <button>atan&lpar;</button>
-            <button>acot&lpar;</button>
-            <button>rand&lpar;&rpar;</button>
-            <button>abs&lpar;</button>
-            <button>mod&lpar;</button>
-            <button class="operatorButton">=</button>
-            <button>π</button>
-            <button>e</button>
-            <button>,</button>
-            <button>1/</button>
-            <button>ln&lpar;</button>
-            <button>log10&lpar;</button>
-            <button>e^</button>
-            <button>10^</button>
-            <button>ans&lpar;&rpar;</button>
-            <button class="clearButton">C</button>
+        <div id="history">
+            <button id="clearHistory">Clear history</button>
+            <ul id="list"></ul>
         </div>
-    </div>
-    <div id="history">
-        <button id="clearHistory">Clear history</button>
-        <ul id="list"></ul>
     </div>
     <!-- CSS -->
     <style>
@@ -104,6 +106,9 @@
             cursor: pointer;
             user-select: none;
         }
+        #main{
+            display: flex;
+        }
         #calculator{ 
             background-color: rgb(50, 50, 50);
             border-radius: 10px;
@@ -116,7 +121,7 @@
             box-shadow: 0px 0px 20px black;
             margin-left: 10px;
             width: 400px;
-            height: 966px;
+            height: inherit;
             overflow: hidden;
             position: relative;
         }
@@ -156,6 +161,7 @@
             color: white;
             text-shadow: 0px 0px var(--text-glow) white;
             padding: 10px;
+            margin-bottom: 5px;
             box-sizing: border-box;
         }
         #buttons{
@@ -222,7 +228,7 @@
             box-shadow: 0px 0px var(--checkbox-glow) var(--checkbox-accent-color);
         }
         #checkboxes{
-            margin-left: 10px;
+            margin: 5px 0px 5px 10px;
         }
     </style>
     <!-- JAVASCRIPT -->

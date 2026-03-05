@@ -67,11 +67,11 @@
                 <button>π</button>
                 <button>e</button>
                 <button>,</button>
-                <button>1/</button>
                 <button>ln&lpar;</button>
                 <button>log10&lpar;</button>
                 <button>e^</button>
                 <button>10^</button>
+                <button>1/</button>
                 <button>ans&lpar;&rpar;</button>
                 <button class="clearButton">C</button>
             </div>
@@ -311,8 +311,10 @@
             let multiples2 = [];
             let equalMultiples = [];
 
-            for (let i = 0; i < 100; i++){
+            for (let i = 0; i < value2; i++){
                 multiples1.push(value1*(i+1));
+            }
+            for (let i = 0; i < value1; i++){
                 multiples2.push(value2*(i+1));
             }
             for (let i = 0; i < multiples1.length; i++){

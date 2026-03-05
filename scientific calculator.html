@@ -12,10 +12,14 @@
     <div id="main">
         <div id="calculator">
             <div id="checkboxes">
-                <label for="radDeg" class="radDeg">Radians:</label>
-                <input type="checkbox" name="radDeg" id="radDeg">
-                <label for="hyperbolic" class="hyperbolic">Hyp:</label>
-                <input type="checkbox" name="hyperbolic" id="hyperbolic">
+                <div id="radDegDiv">
+                    <label for="radDeg" class="radDeg">Radians:</label>
+                    <input type="checkbox" name="radDeg" id="radDeg">
+                </div>
+                <div id="hyperbolicDiv">
+                    <label for="hyperbolic" class="hyperbolic">Hyp:</label>
+                    <input type="checkbox" name="hyperbolic" id="hyperbolic">
+                </div>
             </div>
             <input type="text" name="calculatorDisplay" id="calculatorDisplay" spellcheck="false" readonly><br>
             <div id="buttons">
@@ -228,6 +232,8 @@
         }
         #checkboxes{
             margin: 5px 0px 5px 10px;
+            display: flex;
+            gap: 10px;
         }
     </style>
     <!-- JAVASCRIPT -->

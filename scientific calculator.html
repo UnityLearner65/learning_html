@@ -172,6 +172,7 @@
             text-shadow: 0px 0px var(--text-glow) white;
             padding: 10px;
             box-sizing: border-box;
+            overflow: visible;
         }
         #buttons{
             display: grid;
@@ -261,7 +262,7 @@
         let charsAdded = [];
         let parenthesisAmnt = 0;
 
-        function appendToDisplay(value){calculatorDisplay.value = value.join("");}
+        function appendToDisplay(value){calculatorDisplay.value = value.join(""); calculatorDisplay.focus();}
         function backspace(){
             const index = charsAdded.lastIndexOf(charsAdded[charsAdded.length-1]);
             if (charsAdded.length > 0 && (charsAdded[index].includes("(") && !charsAdded[index].includes(")"))){
@@ -271,7 +272,7 @@
                 parenthesisAmnt++;
             }
             charsAdded.splice(index, 1); 
-            calculatorDisplay.value = charsAdded.join("");
+            calculatorDisplay.value = charsAdded.join(""); calculatorDisplay.focus();
         }
         function calculateFactors(value){
             let factors = [];
